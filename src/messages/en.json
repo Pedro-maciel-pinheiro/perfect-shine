@@ -1,0 +1,54 @@
+{
+    "HomePage": {
+      "welcomeMessage": "Welcome to Perfect Shine!",
+      "intro": "At Perfect Shine, we believe that every car deserves to look its best, whether it's your daily driver or your prized possession. Our team of experienced professionals is dedicated to providing top-notch car detailing services, ensuring your vehicle shines like never before. From basic cleaning to premium, meticulous care, we offer a range of services tailored to meet your needs and exceed your expectations."
+    },
+    "ServicesPage": {
+      "title": "Our Services",
+      "basicWashing": {
+        "title": "Basic Washing",
+        "duration": "2-4 Hours",
+        "priceUSD": "$50 USD",
+        "priceJPY": "¥7,500 JPY",
+        "details": "Our Basic Washing service is perfect for those who need a quick yet thorough cleaning. We start with a gentle hand wash, followed by a detailed exterior wipe-down. We also clean the windows, wheels, and tires, ensuring your car looks fresh and clean."
+      },
+      "midWashing": {
+        "title": "Mid-Level Washing",
+        "duration": "6-8 Hours",
+        "priceUSD": "$150 USD",
+        "priceJPY": "¥22,500 JPY",
+        "details": "The Mid-Level Washing service offers a deeper clean, ideal for those who want to go beyond the basics. This package includes everything in the Basic Wash, plus a full interior vacuum, upholstery cleaning, and a protective wax application to give your car that extra shine."
+      },
+      "premiumWashing": {
+        "title": "Premium Detailing",
+        "duration": "24 Hours+",
+        "priceUSD": "$400 USD",
+        "priceJPY": "¥60,000 JPY",
+        "details": "Our Premium Detailing is the ultimate in car care, designed for those who demand perfection. This service includes a complete exterior and interior detail, paint correction, ceramic coating, and leather conditioning. We meticulously clean every inch of your vehicle, ensuring it looks as good as new—or even better."
+      }
+    },
+    "AboutPage": {
+      "title": "About Us",
+      "description": "Perfect Shine was founded on the belief that a car is more than just a mode of transportation; it's a reflection of your personality and style. We understand the passion that car owners have for their vehicles, and we're here to help you keep your car in pristine condition.",
+      "team": "Our team consists of highly skilled professionals who are passionate about cars and dedicated to providing the best service possible. We continually invest in the latest tools, products, and techniques to ensure that we deliver the highest quality results."
+    },
+    "WhyChooseUsPage": {
+      "title": "Why Choose Us?",
+      "expertise": "Our team has years of experience in car detailing, ensuring your car is in the best hands.",
+      "qualityProducts": "We use only the highest quality products to protect and enhance your vehicle.",
+      "customerSatisfaction": "Your satisfaction is our top priority. We go the extra mile to make sure you're happy with our services.",
+      "attentionToDetail": "We pride ourselves on our meticulous approach, ensuring every detail is perfect."
+    },
+    "ContactPage": {
+      "title": "Contact Us",
+      "description": "Ready to give your car the shine it deserves? Contact us today to book an appointment or to learn more about our services.",
+      "phoneUSA": "+1 555-123-4567 (USA)",
+      "phoneJapan": "+81 555-123-4567 (Japan)",
+      "email": "info@perfectshine.com",
+      "locations": {
+        "tokyo": "123 Shine Street, Tokyo, Japan",
+        "losAngeles": "456 Gleam Avenue, Los Angeles, USA"
+      }
+    }
+  }
+  
