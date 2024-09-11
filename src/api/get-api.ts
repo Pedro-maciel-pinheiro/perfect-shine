@@ -1,21 +1,9 @@
-import productData from "@/data/products-data.json"
+import productData from "@/data/products-data.json";
 
 
-
-
-
-
-
-
-
-export const getProductData = () =>{
-    const res = productData
-    
-    if(!res) {
-      throw Error
-    }
-  
-    return res
+export const getProductData = () => {
+  if (!productData) {
+    throw new Error("product data not found");
   }
-  
-
+  return productData;
+};

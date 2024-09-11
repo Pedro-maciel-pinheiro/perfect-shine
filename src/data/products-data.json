@@ -1,22 +1,552 @@
 [
   {
     "id": "1",
-    "title": "AMMO",
-    "image": "/img/ammo_skin.webp"
+    "title": "AMMO Hoseless Lift & Wash (CONCENTRATE)",
+    "subtitle": "Easy Hoseless Wash Concentrate",
+    "description": "AMMO is a 20x concentrated humectant that creates a thick shaving cream-like foam. It protects the surface of your paint from scratching during a hoseless wash. Use on wet or dry paint with no final rinse.",
+    "image": "/img/id1/extra1.webp",
+    "thumbImage": "/img/id1/thumb.webp",
+    "extraImages": [
+      "/img/id1/extra1.webp",
+      "/img/id1/extra2.webp",
+      "/img/id1/extra3.webp"
+    ],
+    "rating": 4.5,
+    "priceUSD": 30.00,
+    "priceYEN": 4450,
+    "reviews": [
+      {
+        "date": "08/24/2024",
+        "reviewer": "Dan Visker",
+        "comment": "Great Towel Wash. Compared to the other products I had tried, your wash got my towels cleaner and newer looking. Thanks for another great product.",
+        "rating": 5
+      },
+      {
+        "date": "08/22/2024",
+        "reviewer": "John Doe",
+        "comment": "Good product but a bit expensive for what it offers.",
+        "rating": 4
+      }
+    ]
   },
   {
     "id": "2",
-    "title": "AMMO",
-    "image": "/img/ammo_skin.webp"
+    "title": "AMMO Hydrate Paint Moisturizer",
+    "subtitle": "Safe Surface Lubrication",
+    "description": "AMMO Hydrate is designed to safely lubricate and protect your car’s surface while drying after a wash. Its hydrating formula reduces scratches and provides long-lasting protection.",
+    "image": "/img/id2/extra1.webp",
+    "thumbImage": "/img/id2/thumb.webp",
+    "extraImages": [
+      "/img/id2/extra1.webp",
+      "/img/id2/extra2.webp",
+      "/img/id2/extra3.webp"
+    ],
+    "rating": 4.5,
+    "priceUSD": 45.00,
+    "priceYEN": 6675,
+    "reviews": [
+      {
+        "date": "08/15/2024",
+        "reviewer": "Jane Smith",
+        "comment": "Keeps the paint looking fresh and shiny.",
+        "rating": 5
+      },
+      {
+        "date": "08/18/2024",
+        "reviewer": "Michael Roe",
+        "comment": "Not bad, but I expected better results on darker paints.",
+        "rating": 3
+      }
+    ]
   },
   {
     "id": "3",
-    "title": "AMMO",
-    "image": "/img/ammo_skin.webp"
+    "title": "AMMO Aero Wash & Gloss",
+    "subtitle": "High-Gloss Finish Wash",
+    "description": "AMMO Aero is designed to deliver a high-gloss finish after a wash. It's formulated to protect and shine, leaving your car looking as good as new.",
+    "image": "/img/id3/extra1.webp",
+    "thumbImage": "/img/id3/thumb.webp",
+    "extraImages": [
+      "/img/id3/extra1.webp",
+      "/img/id3/extra2.jpg",
+      "/img/id3/extra3.webp"
+    ],
+    "rating": 4.7,
+    "priceUSD": 50.00,
+    "priceYEN": 7420,
+    "reviews": [
+      {
+        "date": "08/10/2024",
+        "reviewer": "Alex Murphy",
+        "comment": "Great wash, leaves a brilliant shine.",
+        "rating": 5
+      },
+      {
+        "date": "08/12/2024",
+        "reviewer": "Chris Daniels",
+        "comment": "Does the job well but a bit pricey.",
+        "rating": 4
+      },
+      {
+        "date": "08/11/2024",
+        "reviewer": "Sam Cooper",
+        "comment": "Not impressed, didn't make much difference on my vehicle.",
+        "rating": 2
+      }
+    ]
   },
   {
     "id": "4",
-    "title": "AMMO",
-    "image": "/img/ammo_skin.webp"
+    "title": "AMMO Boost Interior Scent",
+    "subtitle": "Premium Leather Scent",
+    "description": "AMMO Boost offers a luxurious leather scent for your car’s interior. Safe and non-toxic, it enhances the atmosphere of any vehicle with a subtle, premium fragrance.",
+    "image": "/img/id4/extra1.webp",
+    "thumbImage": "/img/id4/thumb.webp",
+    "extraImages": [
+      "/img/id4/extra1.webp",
+      "/img/id4/extra2.webp",
+      "/img/id4/extra3.webp"
+    ],
+    "rating": 4.2,
+    "priceUSD": 25.00,
+    "priceYEN": 3715,
+    "video": "https://youtu.be/QDJl8a2TpyY",
+    "reviews": [
+      {
+        "date": "07/30/2024",
+        "reviewer": "Lisa Harper",
+        "comment": "Lovely scent, makes my car feel brand new.",
+        "rating": 5
+      },
+      {
+        "date": "07/29/2024",
+        "reviewer": "Tom Jones",
+        "comment": "Good but doesn't last as long as I'd like.",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "AMMO Interior Matte Finish",
+    "subtitle": "Anti-Glare Interior Protectant",
+    "description": "AMMO Interior Matte Finish is designed to protect and maintain a clean, anti-glare interior surface. Perfect for dashboards, it provides a sleek matte finish while protecting against UV damage.",
+    "image": "/img/id5/extra1.webp",
+    "thumbImage": "/img/id5/thumb.webp",
+    "extraImages": [
+      "/img/id5/extra1.webp",
+      "/img/id5/extra2.webp",
+      "/img/id5/extra3.webp"
+    ],
+    "rating": 4.6,
+    "priceUSD": 35.00,
+    "priceYEN": 5195,
+    "video": "https://youtu.be/9D4TxyFgn1c",
+    "reviews": [
+      {
+        "date": "08/02/2024",
+        "reviewer": "Robert Wells",
+        "comment": "Keeps the dash looking great without the glare!",
+        "rating": 4
+      },
+      {
+        "date": "08/01/2024",
+        "reviewer": "Emily Watson",
+        "comment": "Best interior cleaner I’ve used.",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "AMMO Carnauba Paste Wax",
+    "subtitle": "Handmade Premium Wax",
+    "description": "AMMO Carnauba Paste Wax is a handcrafted, premium wax that delivers an exceptional shine. Made from the finest carnauba wax, it ensures long-lasting protection for your vehicle’s paint.",
+    "image": "/img/id6/extra1.webp",
+    "thumbImage": "/img/id6/thumb.webp",
+    "extraImages": [
+      "/img/id6/extra1.webp",
+      "/img/id6/extra2.webp",
+      "/img/id6/extra3.webp"
+    ],
+    "rating": 4.8,
+    "priceUSD": 100.00,
+    "priceYEN": 14850,
+    "video": "https://youtu.be/7j8F8o5fLWs",
+    "reviews": [
+      {
+        "date": "07/26/2024",
+        "reviewer": "Mark Spencer",
+        "comment": "Incredible shine, totally worth the price!",
+        "rating": 5
+      },
+      {
+        "date": "07/27/2024",
+        "reviewer": "Paul Bryant",
+        "comment": "Best wax I’ve ever used on my car.",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "AMMO Reflex Coating Kit",
+    "subtitle": "Hydrophobic Coating for Paint Protection",
+    "description": "AMMO Reflex Coating Kit provides a hydrophobic barrier that protects your car’s paint from the elements. It delivers long-lasting protection and a stunning shine, enhancing the depth of your paint’s color.",
+    "image": "/img/id7/extra1.webp",
+    "thumbImage": "/img/id7/thumb.webp",
+    "extraImages": [
+      "/img/id7/extra1.webp",
+      "/img/id7/extra2.webp",
+      "/img/id7/extra3.webp"
+    ],
+    "rating": 4.9,
+    "priceUSD": 150.00,
+    "priceYEN": 22275,
+    "video": "https://youtu.be/Bd3fjsl1ThI",
+    "reviews": [
+      {
+        "date": "07/20/2024",
+        "reviewer": "Anna Carter",
+        "comment": "My car has never looked better!",
+        "rating": 5
+      },
+      {
+        "date": "07/22/2024",
+        "reviewer": "David Simmons",
+        "comment": "Great product, keeps my car shiny for months.",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "AMMO Frothe",
+    "subtitle": "Rinse-Free Wash Solution",
+    "description": "AMMO Frothe is a revolutionary, rinse-free wash solution that allows you to clean your car without using water. Its foam-based formula lifts dirt from the surface, making it easy to remove without scratching.",
+    "image": "/img/id8/extra1.webp",
+    "thumbImage": "/img/id8/thumb.webp",
+    "extraImages": [
+      "/img/id8/extra1.webp",
+      "/img/id8/extra2.webp",
+      "/img/id8/extra3.webp"
+    ],
+    "rating": 4.5,
+    "priceUSD": 55.00,
+    "priceYEN": 8150,
+    "reviews": [
+      {
+        "date": "07/15/2024",
+        "reviewer": "Sarah Cole",
+        "comment": "Works great for quick washes, very convenient.",
+        "rating": 5
+      },
+      {
+        "date": "07/14/2024",
+        "reviewer": "Kevin Blake",
+        "comment": "Decent product, but not as effective on heavy dirt.",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "AMMO Skin Defense",
+    "subtitle": "Protective Coating for Paint",
+    "description": "AMMO Skin Defense is a hydrophobic paint protectant that forms a durable barrier against environmental damage, including UV rays, road salts, and pollutants.",
+    "image": "/img/id9/extra1.webp",
+    "thumbImage": "/img/id9/thumb.webp",
+    "extraImages": [
+      "/img/id9/extra1.webp",
+      "/img/id9/extra2.webp",
+      "/img/id9/extra3.webp"
+    ],
+    "rating": 4.6,
+    "priceUSD": 80.00,
+    "priceYEN": 11880,
+    "reviews": [
+      {
+        "date": "08/10/2024",
+        "reviewer": "Daniel Evans",
+        "comment": "Great protection, my paint looks brand new.",
+        "rating": 5
+      },
+      {
+        "date": "08/12/2024",
+        "reviewer": "Jessica Turner",
+        "comment": "A bit pricey but definitely worth the investment.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "AMMO Shag Drying Towel",
+    "subtitle": "Premium Microfiber Towel",
+    "description": "The AMMO Shag Drying Towel is made from ultra-soft, high-density microfiber. It’s perfect for drying your vehicle without leaving streaks or scratches.",
+    "image": "/img/id10/extra1.webp",
+    "thumbImage": "/img/id10/thumb.webp",
+    "extraImages": [
+      "/img/id10/extra1.webp",
+      "/img/id10/extra2.webp",
+      "/img/id10/extra3.webp"
+    ],
+    "rating": 4.8,
+    "priceUSD": 25.00,
+    "priceYEN": 3715,
+    "reviews": [
+      {
+        "date": "08/08/2024",
+        "reviewer": "Patrick Henry",
+        "comment": "Best drying towel I’ve ever used.",
+        "rating": 5
+      },
+      {
+        "date": "08/09/2024",
+        "reviewer": "Emily Davis",
+        "comment": "Absorbs water well, but a bit smaller than I expected.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "AMMO Mud Tire Dressing",
+    "subtitle": "Long-Lasting Tire Shine",
+    "description": "AMMO Mud is a water-based tire dressing designed to give your tires a deep, black shine while protecting them from cracking and fading.",
+    "image": "/img/id11/extra1.webp",
+    "thumbImage": "/img/id11/thumb.webp",
+    "extraImages": [
+      "/img/id11/extra1.webp",
+      "/img/id11/extra2.webp",
+      "/img/id11/extra3.webp"
+    ],
+    "rating": 4.7,
+    "priceUSD": 40.00,
+    "priceYEN": 5940,
+    "reviews": [
+      {
+        "date": "07/30/2024",
+        "reviewer": "Greg Mitchell",
+        "comment": "Gives my tires a perfect matte finish.",
+        "rating": 5
+      },
+      {
+        "date": "07/31/2024",
+        "reviewer": "Laura Carter",
+        "comment": "Good shine, but it doesn't last as long as I expected.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "AMMO Spit Emergency Spray Wax",
+    "subtitle": "Quick Shine Spray Wax",
+    "description": "AMMO Spit is a fast-acting spray wax designed for use between washes to boost your car’s shine and add a layer of protection.",
+    "image": "/img/id12/extra1.webp",
+    "thumbImage": "/img/id12/thumb.webp",
+    "extraImages": [
+      "/img/id12/extra1.webp",
+      "/img/id12/extra2.webp",
+      "/img/id12/extra3.webp"
+    ],
+    "rating": 4.5,
+    "priceUSD": 30.00,
+    "priceYEN": 4450,
+    "reviews": [
+      {
+        "date": "07/28/2024",
+        "reviewer": "Mark Peterson",
+        "comment": "Quick and easy to use. Leaves a nice gloss.",
+        "rating": 5
+      },
+      {
+        "date": "07/29/2024",
+        "reviewer": "Oliver Adams",
+        "comment": "Good for a quick shine but doesn’t last long.",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "AMMO Plum Leather Cleaner",
+    "subtitle": "Premium Leather Cleaner",
+    "description": "AMMO Plum is a non-toxic, pH-balanced leather cleaner that gently lifts dirt and grime from leather surfaces without damaging or drying out the material.",
+    "image": "/img/id13/extra1.webp",
+    "thumbImage": "/img/id13/thumb.webp",
+    "extraImages": [
+      "/img/id13/extra1.webp",
+      "/img/id13/extra2.webp",
+      "/img/id13/extra3.webp"
+    ],
+    "rating": 4.8,
+    "priceUSD": 35.00,
+    "priceYEN": 5195,
+    "reviews": [
+      {
+        "date": "07/25/2024",
+        "reviewer": "Sarah Miller",
+        "comment": "Cleans my leather seats perfectly, leaves them feeling soft.",
+        "rating": 5
+      },
+      {
+        "date": "07/24/2024",
+        "reviewer": "Brian Fisher",
+        "comment": "Effective but a bit expensive for leather cleaner.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "AMMO Brute Wheel Soap",
+    "subtitle": "High-Strength Wheel Cleaner",
+    "description": "AMMO Brute is a powerful wheel soap designed to cut through brake dust and grime. Safe for all wheel finishes, it leaves your wheels sparkling clean.",
+    "image": "/img/id14/extra1.webp",
+    "thumbImage": "/img/id14/thumb.webp",
+    "extraImages": [
+      "/img/id14/extra1.webp",
+      "/img/id14/extra2.webp",
+      "/img/id14/extra3.webp"
+    ],
+    "rating": 4.9,
+    "priceUSD": 60.00,
+    "priceYEN": 8910,
+    "reviews": [
+      {
+        "date": "07/20/2024",
+        "reviewer": "James Roberts",
+        "comment": "Best wheel cleaner I’ve used. Gets rid of all the grime.",
+        "rating": 5
+      },
+      {
+        "date": "07/19/2024",
+        "reviewer": "Angela Lee",
+        "comment": "Works well but a little pricey for wheel cleaner.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "AMMO Car Interior Vacuum",
+    "subtitle": "Portable Car Vacuum Cleaner",
+    "description": "AMMO's portable car vacuum is lightweight yet powerful, designed to reach every corner of your vehicle's interior, keeping it clean and dust-free.",
+    "image": "/img/id15/extra1.webp",
+    "thumbImage": "/img/id15/thumb.webp",
+    "extraImages": [
+      "/img/id15/extra1.webp",
+      "/img/id15/extra2.webp",
+      "/img/id15/extra3.webp"
+    ],
+    "rating": 4.3,
+    "priceUSD": 70.00,
+    "priceYEN": 10385,
+    "reviews": [
+      {
+        "date": "07/12/2024",
+        "reviewer": "Olivia Stevens",
+        "comment": "Very convenient and easy to use. Picks up dust well.",
+        "rating": 4
+      },
+      {
+        "date": "07/11/2024",
+        "reviewer": "Ben Richards",
+        "comment": "Works fine but could use more power.",
+        "rating": 3
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "AMMO Clay Bar Kit",
+    "subtitle": "Smooth Finish Surface Prep",
+    "description": "The AMMO Clay Bar Kit helps remove embedded contaminants from your paint's surface, leaving it perfectly smooth and ready for waxing or polishing.",
+    "image": "/img/id16/extra1.webp",
+    "thumbImage": "/img/id16/thumb.webp",
+    "extraImages": [
+      "/img/id16/extra1.webp",
+      "/img/id16/extra2.webp",
+      "/img/id16/extra3.webp"
+    ],
+    "rating": 4.7,
+    "priceUSD": 40.00,
+    "priceYEN": 5940,
+    "reviews": [
+      {
+        "date": "07/10/2024",
+        "reviewer": "Samuel Bennett",
+        "comment": "Does a great job of removing all surface contaminants.",
+        "rating": 5
+      },
+      {
+        "date": "07/09/2024",
+        "reviewer": "Megan Cox",
+        "comment": "Good product, but a bit difficult to use for beginners.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "AMMO Reflex Pro Wax",
+    "subtitle": "Professional-Grade Car Wax",
+    "description": "AMMO Reflex Pro Wax provides a deep gloss and long-lasting protection for your vehicle's paint, enhancing its shine and durability.",
+    "image": "/img/id17/extra1.webp",
+    "thumbImage": "/img/id17/thumb.webp",
+    "extraImages": [
+      "/img/id17/extra1.webp",
+      "/img/id17/extra2.webp",
+      "/img/id17/extra3.webp"
+    ],
+    "rating": 4.9,
+    "priceUSD": 100.00,
+    "priceYEN": 14850,
+    "reviews": [
+      {
+        "date": "07/08/2024",
+        "reviewer": "Ethan Long",
+        "comment": "Best wax I've used, my car looks brand new.",
+        "rating": 5
+      },
+      {
+        "date": "07/07/2024",
+        "reviewer": "Julia Campbell",
+        "comment": "Great shine and protection, but expensive.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "AMMO Hydrate Paint Moisturizer",
+    "subtitle": "After-Wash Moisturizer",
+    "description": "AMMO Hydrate is a post-wash solution that helps to lock in moisture, making your car's paint look rich and vibrant while protecting it from the elements.",
+    "image": "/img/id18/extra1.webp",
+    "thumbImage": "/img/id18/thumb.webp",
+    "extraImages": [
+      "/img/id18/extra1.webp",
+      "/img/id18/extra2.webp",
+      "/img/id18/extra3.webp"
+    ],
+    "rating": 4.6,
+    "priceUSD": 65.00,
+    "priceYEN": 9630,
+    "reviews": [
+      {
+        "date": "07/05/2024",
+        "reviewer": "Matthew Walker",
+        "comment": "Great product, really brings out the shine after washing.",
+        "rating": 5
+      },
+      {
+        "date": "07/06/2024",
+        "reviewer": "Nancy Young",
+        "comment": "Good product but a bit pricey for what it does.",
+        "rating": 4
+      }
+    ]
   }
 ]
