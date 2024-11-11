@@ -1,16 +1,13 @@
-import HeroPage from "@/components/hero/hero";
-import { HeroMidSection } from "@/components/hero/hero-mid-section";
-import { ProductCard } from "@/components/custom/product-card";
-import { getProductData } from "@/api/get-api";
+
+import HomePage from "@/app/[locale]/home/page";
+
+
+
 
 export default async function Home() {
-  const productList = getProductData();
-
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <HeroPage />
-      <HeroMidSection />
-      <ProductCard productData={productList} />
+    <main className="flex min-h-screen flex-col items-center justify-center">
+     <HomePage/>
     </main>
   );
 }

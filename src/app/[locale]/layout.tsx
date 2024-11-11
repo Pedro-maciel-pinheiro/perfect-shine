@@ -3,7 +3,9 @@ import { Anek_Devanagari } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import Navbar from "@/components/navigation/navbar";
+
+import Footer from "@/components/footer/footer";
+import HeaderNavigation from "@/components/navigation/header-nav";
 
 const anek = Anek_Devanagari({ subsets: ["latin"] });
 
@@ -24,8 +26,9 @@ export default async function RootLayout({
     <html lang={locale} className={anek.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Navbar/>
+          <HeaderNavigation />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

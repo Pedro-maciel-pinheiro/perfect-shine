@@ -136,7 +136,7 @@
     "extraImages": [
       "/img/id5/extra1.webp",
       "/img/id5/extra2.webp",
-      "/img/id5/extra3.webp"
+      "/img/id5/extra3.jpg"
     ],
     "rating": 4.6,
     "priceUSD": 35.00,
@@ -498,7 +498,7 @@
     "thumbImage": "/img/id17/thumb.webp",
     "extraImages": [
       "/img/id17/extra1.webp",
-      "/img/id17/extra2.webp",
+      "/img/id17/extra2.jpg",
       "/img/id17/extra3.webp"
     ],
     "rating": 4.9,
