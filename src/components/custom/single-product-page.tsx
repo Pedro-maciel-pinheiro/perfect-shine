@@ -1,31 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { perfectshine_font } from "@/constant/font";
 import { singleProductProps } from "@/types/type";
 import { currentparams } from "@/constant/current-params";
-import Link from "next/link";
 import { AddToCartButton } from "../button/add-to-cart-button";
+import { Breadcrumb } from "../breadcrumb";
 
 export default function SingleProductPage({ product }: singleProductProps) {
-  const [isSucess, setIsSucess] = useState(false);
+  const breadcrumbParams = [
+    ...currentparams,
+    { id: 3, name: product.title, href: "" },
+  ];
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center">
-      <ol className="flex items-center space-x-2">
-        {currentparams.map((params, index) => (
-          <li key={params.name}>
-            <div className="flex items-center text-sm">
-              <Link
-                className="text-sm font-medium text-gray-500 hover:text-gray-900"
-                href={params.href}
-              >
-                {params.name}
-              </Link>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <Breadcrumb paramsInfo={breadcrumbParams}/>
       <div className="grid max-w-7xl grid-cols-2">
         {product && (
           <div className="flex h-full w-full items-center justify-start text-xl text-black">

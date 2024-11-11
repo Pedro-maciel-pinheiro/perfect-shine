@@ -38,3 +38,14 @@ export type ProductCardDisplayProps = {
   product:ProductsListProps
   quantity: number;
 }
+
+
+type BreadcrumbItemsProps = {
+  id:number
+  name:string
+  href:string
+}
+
+export type BreadcrumbProps = {
+  paramsInfo:BreadcrumbItemsProps[]
+}
