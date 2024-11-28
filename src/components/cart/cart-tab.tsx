@@ -12,7 +12,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
-import { Link } from "@/navigation";
+import Link from "next/link";
 import { useCart } from "@/components/cart/use-cart";
 import { CartItemDisplay } from "@/components/cart/cart-item-display";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -34,9 +34,9 @@ export const CartTab = () => {
   const fee = 1;
   return (
     <Sheet>
-      <SheetTrigger className="group -m-2 flex items-center gap-2 p-2">
-        <span className="ml-2 text-sm font-medium text-gray-400 group-hover:text-gray-800">
-          {isMounted ? itemCount : 0}
+      <SheetTrigger className="group -m-2 flex items-center  gap-2 p-2">
+        <span className="ml-2 mt-2 text-sm font-medium text-gray-400 group-hover:text-gray-800">
+        {isMounted ? itemCount : 0}
         </span>
         <ShoppingBasket
           aria-hidden="true"

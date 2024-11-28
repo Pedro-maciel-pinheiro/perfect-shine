@@ -3,7 +3,7 @@ import { ProductCardDisplayProps } from "@/types/type";
 import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { useCart } from "./use-cart";
+import { useCart } from "@/components/cart/use-cart";
 import { formatPrice } from "@/lib/utils";
 
 export const CartItemDisplay = ({

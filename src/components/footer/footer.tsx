@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="text-base-content mt-10 grid grid-cols-2 content-center gap-8 bg-black p-10 text-white">
+    <footer className="text-base-content  grid md:grid-cols-2 content-center gap-8 bg-black p-10 text-white">
       <aside className="mt-2 flex flex-col gap-8">
         <Link href={"/"}>
           <Image src={"/logo/logo-white.png"} alt="" width={300} height={300} />

@@ -30,22 +30,24 @@ export type singleProductProps = {
   product: ProductsListProps;
 };
 
+export type VerifyEmailTokenProps = {
+  token: string;
+};
 
 export type ProductButtonProps = {
-  product:ProductsListProps
-}
+  product: ProductsListProps;
+};
 export type ProductCardDisplayProps = {
-  product:ProductsListProps
+  product: ProductsListProps;
   quantity: number;
-}
-
+};
 
 type BreadcrumbItemsProps = {
-  id:number
-  name:string
-  href:string
-}
+  id: number;
+  name: string;
+  href: string;
+};
 
 export type BreadcrumbProps = {
-  paramsInfo:BreadcrumbItemsProps[]
-}
+  paramsInfo: BreadcrumbItemsProps[];
+};

@@ -23,11 +23,3 @@ export const getSingleProduct = async (
 
 
 
-
-// export const getSingleProduct = async (id: number) => {
-//   const item = getProductData();
-//   const singleItem = item.find(
-//     (productDetails: any) => productDetails.id == id
-//   );
-//   return singleItem;
-// };

@@ -1,10 +1,8 @@
 import React from "react";
-
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function HeroPage() {
-  const t = useTranslations("HomePage");
+  
   return (
     <section className="flex w-full flex-col items-center justify-center bg-black">
       <div className="relative overflow-hidden">

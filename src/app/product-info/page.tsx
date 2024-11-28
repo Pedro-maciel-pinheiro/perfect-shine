@@ -1,7 +1,8 @@
 import SingleProductPage from "@/components/custom/single-product-page";
 import { getSingleProduct } from "@/helper";
-import { Link } from "@/navigation";
+
 import { searchParamsProps } from "@/types/type";
+import Link from "next/link";
 
 export default async function ProductInformationPage({
   searchParams,

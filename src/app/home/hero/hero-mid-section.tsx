@@ -5,12 +5,12 @@ import { service_information } from "@/constant/hero-service-options";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { SectionHeader } from "../../../../components/section-header";
+import { SectionHeader } from "@/components/section-header";
 
 export const HeroMidSection = () => {
   const animationDelay = 0.5;
   return (
-    <motion.div className="relative h-auto max-w-[90%] lg:max-w-[1400px]">
+    <motion.div className="relative h-auto max-w-[90%] lg:max-w-screen-2xl">
       <SectionHeader title={"What we use ?"} />
       <div className="mx-auto grid h-auto w-full max-w-5xl items-center md:grid-cols-2">
         <motion.span

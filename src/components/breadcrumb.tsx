@@ -1,7 +1,7 @@
 import React from "react";
 import { currentparams } from "@/constant/current-params";
-import { Link } from "@/navigation";
 import { BreadcrumbProps } from "@/types/type";
+import Link from "next/link";
 
 export const Breadcrumb = ({ paramsInfo }: BreadcrumbProps) => {
   return (

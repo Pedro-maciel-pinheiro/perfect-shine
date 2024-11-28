@@ -1,6 +1,6 @@
 import { getProductData } from "@/api/get-api";
 import { SectionHeader } from "@/components/section-header";
-import { Link } from "@/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
@@ -9,7 +9,7 @@ export const HeroDailyProduct = () => {
   const randomIndex = Math.floor(Math.random() * productData.length);
   const productSlice = productData.slice(randomIndex, randomIndex + 1);
   return (
-    <section className="h-auto w-full max-w-[90%] lg:max-w-[1400px]">
+    <section className="h-auto w-full max-w-[90%] lg:max-w-screen-2xl">
       <SectionHeader title={"NEW  + FRESH"} />
 
       <ul className="mx-2">

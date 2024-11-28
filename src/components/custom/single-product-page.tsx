@@ -6,6 +6,7 @@ import { singleProductProps } from "@/types/type";
 import { currentparams } from "@/constant/current-params";
 import { AddToCartButton } from "../button/add-to-cart-button";
 import { Breadcrumb } from "../breadcrumb";
+import { ProductReel } from "./product-reel";
 
 export default function SingleProductPage({ product }: singleProductProps) {
   const breadcrumbParams = [
@@ -14,7 +15,7 @@ export default function SingleProductPage({ product }: singleProductProps) {
   ];
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center ">
       <Breadcrumb paramsInfo={breadcrumbParams}/>
       <div className="grid max-w-7xl grid-cols-2">
         {product && (
@@ -59,7 +60,10 @@ export default function SingleProductPage({ product }: singleProductProps) {
               <AddToCartButton product={product} />
             </li>
           )}
+          <ProductReel />
         </ul>
+
+        
       </div>
 
       <div className="h-full w-full"></div>
