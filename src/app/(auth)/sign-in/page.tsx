@@ -44,19 +44,22 @@ export default function Page() {
   const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
     onSuccess: () => {
       toast.success("Signed in successfully");
-      router.refresh();
 
-      if (origin) {
-        router.push(`/${origin}`);
-        return;
-      }
+      router.refresh()
 
-      if (isSeller) {
-        router.push("/sell");
-        return;
-      }
+      setTimeout(() => {
+        if (origin) {
+          router.push(`/${origin}`);
+          return;
+        }
 
-      router.push("/");
+        if (isSeller) {
+          router.push("/sell");
+          return;
+        }
+
+        router.push("/");
+      },100);
     },
 
     onError: (err) => {
@@ -80,9 +83,7 @@ export default function Page() {
 
         <div className="absolute z-20 flex h-full w-full flex-col items-center justify-center p-6">
           <div className="w-full max-w-sm space-y-6 rounded-lg border-2 bg-white p-8 shadow-lg">
-            <h2
-              className={`text-center text-xl font-semibold text-gray-800`}
-            >
+            <h2 className={`text-center text-xl font-semibold text-gray-800`}>
               Sign-in to your {isSeller ? "seller" : "user"} account
             </h2>
             <form

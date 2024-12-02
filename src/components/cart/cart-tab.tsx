@@ -16,10 +16,12 @@ import Link from "next/link";
 import { useCart } from "@/components/cart/use-cart";
 import { CartItemDisplay } from "@/components/cart/cart-item-display";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { AnimatePresence, motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
 
 export const CartTab = () => {
   const { items } = useCart();
-  const itemCount = items.reduce((count , item) => count + item.quantity , 0)
+  const itemCount = items.reduce((count, item) => count + item.quantity, 0);
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,24 +29,30 @@ export const CartTab = () => {
   }, []);
 
   const cartTotal = items.reduce(
-    (total, { product , quantity}) => total + product.priceUSD || product.priceYEN,
+    (total, { product, quantity }) =>
+      total + product.priceUSD || product.priceYEN,
     0,
   );
+
+  if (!isMounted) {
+    return null;
+  }
 
   const fee = 1;
   return (
     <Sheet>
-      <SheetTrigger className="group -m-2 flex items-center  gap-2 p-2">
-        <span className="ml-2 mt-2 text-sm font-medium text-gray-400 group-hover:text-gray-800">
-        {isMounted ? itemCount : 0}
-        </span>
-        <ShoppingBasket
-          aria-hidden="true"
-          className="gruop-hover:text-red-500 text-white"
-          size={25}
-        />
+      <SheetTrigger className="group -m-2 flex items-center gap-2 p-2">
         {itemCount > 0 && (
-          <div>
+          <>
+            <span className="h-6 w-px rounded-full bg-gray-400" />
+            <span className="ml-2 mt-2 text-sm font-medium text-gray-400 group-hover:text-gray-800">
+              {itemCount}
+            </span>
+            <ShoppingBasket
+              aria-hidden="true"
+              className="gruop-hover:text-red-500 text-white"
+              size={25}
+            />
             <svg
               className="w-2 text-red-600"
               aria-hidden="true"
@@ -63,7 +71,7 @@ export const CartTab = () => {
 	S2.7,5.5,2.7,5.5H2.6c-0.3,0.1-0.7,0.3-1,0.4C1.4,6,1.4,6.1,1.4,6.3v13c0,0.4,0.3,0.7,0.7,0.7l0,0h4.5C7.1,20.1,7.4,19.8,7.4,19.4"
               ></path>
             </svg>
-          </div>
+          </>
         )}
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
@@ -74,8 +82,12 @@ export const CartTab = () => {
           <>
             <ScrollArea>
               <div className="flex w-full flex-col pr-6">
-                {items.map(({ product , quantity }) => (
-                  <CartItemDisplay key={product.id} product={product} quantity={quantity} />
+                {items.map(({ product, quantity }) => (
+                  <CartItemDisplay
+                    key={product.id}
+                    product={product}
+                    quantity={quantity}
+                  />
                 ))}
               </div>
             </ScrollArea>
