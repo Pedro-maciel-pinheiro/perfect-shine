@@ -16,8 +16,7 @@ import Link from "next/link";
 import { useCart } from "@/components/cart/use-cart";
 import { CartItemDisplay } from "@/components/cart/cart-item-display";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { AnimatePresence, motion } from "framer-motion";
-import { fadeIn } from "@/utils/motion";
+
 
 export const CartTab = () => {
   const { items } = useCart();
@@ -30,7 +29,7 @@ export const CartTab = () => {
 
   const cartTotal = items.reduce(
     (total, { product, quantity }) =>
-      total + product.priceUSD || product.priceYEN,
+      total + product.price * quantity,
     0,
   );
 

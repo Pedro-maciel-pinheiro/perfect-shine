@@ -1,28 +1,30 @@
 import { perfectshine_font } from "@/constant/font";
-import { ProductCardDisplayProps } from "@/types/type";
+
 import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { useCart } from "@/components/cart/use-cart";
 import { formatPrice } from "@/lib/utils";
+import { ProductCardDisplayProps } from "@/types/type";
 
 export const CartItemDisplay = ({
   product,
   quantity,
 }: ProductCardDisplayProps) => {
   const { removeItem } = useCart();
+  const {image} = product.images[0]
   return (
     <section className="space-y-3 py-2">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center space-x-4">
           <div className="relative aspect-square h-16 w-16 min-w-fit overflow-hidden rounded-lg">
-            {product.image ? (
+            {typeof image !== "string" && image.url ?(
               <Image
-                src={product.image}
-                alt={product.title}
-                fill
-                className="absolute object-cover"
-              />
+              src={image.url}
+              alt={product.name}
+              fill
+              className="absolute object-cover"
+            />
             ) : (
               <div className="flex h-full items-center justify-center bg-secondary">
                 <ImageIcon
@@ -37,7 +39,7 @@ export const CartItemDisplay = ({
             <p
               className={`mb-1 line-clamp-1 text-sm font-semibold ${perfectshine_font.className}`}
             >
-              {product.title}
+              {product.name}
             </p>
             <p className="text-sm text-gray-500"> Quantity:{quantity}</p>
 
@@ -53,7 +55,7 @@ export const CartItemDisplay = ({
           </div>
           <div className="flex flex-col space-y-1 font-medium">
             <span className="ml-auto line-clamp-1 text-sm">
-              {formatPrice(product.priceUSD || product.priceYEN)}
+              {formatPrice(product.price)}
             </span>
           </div>
         </div>

@@ -1,12 +1,13 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import { useCart } from "@/components/cart/use-cart";
 import { Button } from "@/components/ui/button";
-import { ProductButtonProps } from "@/types/type";
+import { AddToCartButtonProps } from "@/types/type";
 
 
 
 
-export const AddToCartButton = ({product}:ProductButtonProps) => {
+export const AddToCartButton = ({product}:AddToCartButtonProps) => {
   const { addItem } = useCart();
   const [isSuccess, setIsSucess] = useState<boolean>(false);
 

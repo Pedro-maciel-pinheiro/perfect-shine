@@ -4,7 +4,6 @@ import "./globals.css";
 
 import Footer from "@/components/footer/footer";
 import HeaderNavigation from "@/components/navigation/header-nav";
-import HomePage from "./home/page";
 import Providers from "@/components/providers";
 import { Toaster } from "sonner";
 
@@ -24,10 +23,10 @@ export default async function RootLayout({
   return (
     <html lang={"en"} className="h-full">
       <body className={`relative h-full antialiased ${anek.className}`}>
-        <main className="relative flex min-h-screen flex-col">
+        <main className="relative flex  flex-col ">
           <Providers>
             <HeaderNavigation />
-            <div className="flex-1 flex-grow ">{children}</div>
+            <div className="flex-1 flex-grow min-h-screen">{children}</div>
             <Footer />
           </Providers>
         </main>

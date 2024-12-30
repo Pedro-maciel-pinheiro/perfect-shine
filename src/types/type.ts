@@ -1,21 +1,14 @@
-import { StaticImageData } from "next/image";
 
-export type ProductsListProps = {
-  id: string | number;
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string | StaticImageData;
-  thumbImage: string;
-  extraImages: string[];
-  rating: number;
-  priceUSD: number;
-  priceYEN: number;
-  gridRow?: string;
-};
+import { TQueryValidator } from "@/lib/validators/query-validator";
+import { Product } from "@/payload-types";
 
-export type ProductCardProps = {
-  productData: ProductsListProps;
+
+
+
+
+export type CartItem = {
+  product: Product;
+  quantity: number;
 };
 
 export type SectionHeaderProps = {
@@ -27,18 +20,20 @@ export type searchParamsProps = {
 };
 
 export type singleProductProps = {
-  product: ProductsListProps;
+  params: {
+    productId: string;
+  };
 };
 
 export type VerifyEmailTokenProps = {
   token: string;
 };
 
-export type ProductButtonProps = {
-  product: ProductsListProps;
+export type AddToCartButtonProps = {
+  product: Product;
 };
 export type ProductCardDisplayProps = {
-  product: ProductsListProps;
+  product: Product;
   quantity: number;
 };
 
@@ -48,6 +43,37 @@ type BreadcrumbItemsProps = {
   href: string;
 };
 
+export type MaxWidthWrapperProps = {
+  className?:string
+  children:React.ReactNode
+}
+
 export type BreadcrumbProps = {
   paramsInfo: BreadcrumbItemsProps[];
+  productName?:string
+  
 };
+
+export interface ProductReelProps {
+  title?: string;
+  subtitle?: string;
+  href?: string;
+  query: TQueryValidator;
+}
+
+export interface ProductListingProps {
+  product: Product | null;
+  index: number;
+}
+
+export interface ImagesCardProps {
+  url: string[];
+  displayAllImages:boolean
+}
+
+
+export interface QuantityControlsProps {
+  quantity: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
+}

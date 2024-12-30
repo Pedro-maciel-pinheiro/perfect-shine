@@ -13,13 +13,15 @@ export function formatPrice(
   } = {},
 ) {
   const { currency = "USD", notation = "compact" } = options;
-
+  
   const numericPrice = typeof price === "string" ? parseFloat(price) : price;
+
+  const locales = currency === "JPY" ? "ja-JP":"en-US"
 
   return new Intl.NumberFormat("en-us", {
     style: "currency",
     currency,
-    notation,
+    notation:currency === "JPY" ? "standard" :notation,
     maximumFractionDigits: currency === "JPY" ? 0 : 2,
   }).format(numericPrice);
 }

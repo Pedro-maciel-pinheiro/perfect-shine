@@ -14,64 +14,73 @@ import {
 } from "@/lib/validators/account-credentials-validator";
 import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
-import { ZodError } from "zod";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { perfectshine_font } from "@/constant/font";
 
-export default function Page() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const isSeller = searchParams.get("as") === "seller";
-  const origin = searchParams.get("origin");
+export default function SignInPage() {
+ const [isSeller , setIsSeller] = React.useState(false)
+ const [origin, setOrigin] = React.useState<string | null>(null);
 
-  const continueAsSeller = () => {
-    router.push("?as=seller");
-  };
+ React.useEffect(() => {
+   // Move URL parameter logic to useEffect
+   const searchParams = new URLSearchParams(window.location.search);
+   setIsSeller(searchParams.get("as") === "seller");
+   setOrigin(searchParams.get("origin"));
+ }, []);
 
-  const continueAsBuyer = () => {
-    router.replace("/sign-in", undefined);
-  };
+ const {
+   register,
+   handleSubmit,
+   formState: { errors },
+ } = useForm<TypeAuthCredentialsValidator>({
+   resolver: zodResolver(AuthCredentialsValidator),
+ });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TypeAuthCredentialsValidator>({
-    resolver: zodResolver(AuthCredentialsValidator),
-  });
+ const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
+   onSuccess: () => {
+     toast.success("Signed in successfully");
 
-  const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
-    onSuccess: () => {
-      toast.success("Signed in successfully");
+     // Use window.location for navigation
+     setTimeout(() => {
+       if (origin) {
+         window.location.href = `/${origin}`;
+         return;
+       }
 
-      router.refresh()
+       if (isSeller) {
+         window.location.href = "/sell";
+         return;
+       }
 
-      setTimeout(() => {
-        if (origin) {
-          router.push(`/${origin}`);
-          return;
-        }
+       window.location.href = "/";
+     }, 100);
+   },
 
-        if (isSeller) {
-          router.push("/sell");
-          return;
-        }
+   onError: (err) => {
+     if (err.data?.code === "UNAUTHORIZED") {
+       toast.error("Invalid email or password");
+     }
+   },
+ });
 
-        router.push("/");
-      },100);
-    },
+ const onSubmit = ({ email, password }: TypeAuthCredentialsValidator) => {
+   signIn({ email, password });
+ };
 
-    onError: (err) => {
-      if (err.data?.code === "UNAUTHORIZED") {
-        toast.error("Invalid email or password");
-      }
-    },
-  });
+ const continueAsSeller = () => {
+   window.location.href = "?as=seller";
+ };
 
-  const onSubmit = ({ email, password }: TypeAuthCredentialsValidator) => {
-    signIn({ email, password });
-  };
+ const continueAsBuyer = () => {
+   window.location.href = "/sign-in";
+ };
+
+
+
+
+
+
 
   return (
     <div className={`${perfectshine_font.className}`}>

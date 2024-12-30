@@ -1,4 +1,5 @@
-import { ProductsListProps } from "@/types/type";
+import { Product } from "@/payload-types";
+import { CartItem} from "@/types/type";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
@@ -7,14 +8,9 @@ import { createJSONStorage, persist } from "zustand/middleware";
 // clear the cart
 // keep track of products in cart
 
-export type CartItem = {
-  product: ProductsListProps;
-  quantity: number;
-};
-
 type CartState = {
   items: CartItem[];
-  addItem: (product: ProductsListProps) => void;
+  addItem: (product: Product) => void;
   removeItem: (productId: string | number) => void;
   clearCart: () => void;
 };

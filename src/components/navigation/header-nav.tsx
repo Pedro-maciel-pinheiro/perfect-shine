@@ -13,7 +13,7 @@ export default async function HeaderNavigation() {
   return (
     <>
       <nav
-        className={`${perfectshine_font.className} fixed top-0 z-50 hidden h-auto w-full flex-col items-center justify-center bg-black text-white md:flex`}
+        className={`${perfectshine_font.className} sticky top-0 z-50 hidden h-auto w-full flex-col items-center justify-center bg-black text-white md:flex`}
       >
         <div className="relative mx-auto flex h-14 max-w-2xl items-center justify-center rounded-xl">
           <ul className="flex max-w-2xl items-center justify-around gap-4 font-semibold"></ul>
