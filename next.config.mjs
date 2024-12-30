@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-   domains:[
-    "localhost",
-    "https://perfect-shine-production.up.railway.app"
-   ]
+    remotePatterns: [
+      {
+        hostname: "localhost",
+        pathname: "**",
+        port: "perfect-shine-production.up.railway.app",
+        protocol: "http",
+      },
+    ],
   },
 };
 
