@@ -31,6 +31,7 @@ export type VerifyEmailTokenProps = {
 
 export type AddToCartButtonProps = {
   product: Product;
+  className?:string
 };
 export type ProductCardDisplayProps = {
   product: Product;
@@ -69,6 +70,9 @@ export interface ProductListingProps {
 export interface ImagesCardProps {
   url: string[];
   displayAllImages:boolean
+}
+export interface ImagesSliderProps {
+  url: string[];
 }
 
 

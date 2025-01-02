@@ -14,7 +14,6 @@ import {
 } from "@/lib/validators/account-credentials-validator";
 import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
-import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { perfectshine_font } from "@/constant/font";
 
@@ -23,7 +22,7 @@ export default function SignInPage() {
  const [origin, setOrigin] = React.useState<string | null>(null);
 
  React.useEffect(() => {
-   // Move URL parameter logic to useEffect
+   
    const searchParams = new URLSearchParams(window.location.search);
    setIsSeller(searchParams.get("as") === "seller");
    setOrigin(searchParams.get("origin"));
@@ -41,7 +40,7 @@ export default function SignInPage() {
    onSuccess: () => {
      toast.success("Signed in successfully");
 
-     // Use window.location for navigation
+     
      setTimeout(() => {
        if (origin) {
          window.location.href = `/${origin}`;

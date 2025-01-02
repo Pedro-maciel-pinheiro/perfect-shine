@@ -6,8 +6,13 @@ import Link from "next/link";
 import { formatPrice } from "@/lib/utils";
 import { PRODUCT_CATEGORIES } from "@/constant/product-category";
 import { ImageCard } from "../custom/image-card";
+import { AddToCartButton } from "../button/add-to-cart-button";
+import { useCart } from "../cart/use-cart";
+import { Button } from "../ui/button";
+import ImageSlider from "../custom/image-slider";
 
 const ProductListing = ({ product, index }: ProductListingProps) => {
+  const { addItem } = useCart();
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -32,17 +37,22 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
     return (
       <Link
         href={`/product-info/${product.id}`}
-        className="flex w-fit items-center justify-center"
+        className="flex w-full items-center justify-center"
       >
-        <div className="flex w-full flex-col items-center">
-          <ImageCard url={validUrls} displayAllImages={false} />
+        <div className="flex w-fit flex-col items-center">
+          <div className="">
+            <ImageCard url={validUrls} displayAllImages={false} />
+            
 
-          <div className="flex flex-col self-start px-2">
-            <h1 className="mt-4 w-32 text-sm font-medium text-gray-100">
+            {/* <AddToCartButton product={product}/> */}
+          </div>
+
+          <div className="flex flex-col px-2 md:self-start">
+            <h1 className={`mt-4 w-32 text-[16px] font-medium text-gray-900`}>
               {product.name}
             </h1>
 
-            <p className="mt-1 text-sm font-medium text-gray-200">
+            <p className="mt-1 text-[16px] font-medium text-gray-800">
               {formatPrice(product.price)}
             </p>
           </div>

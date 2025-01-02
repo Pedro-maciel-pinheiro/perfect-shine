@@ -41,9 +41,9 @@ export default function Page() {
 
       toast.error("Something went wrong. Please try again.");
     },
-    onSuccess: ({ sentToEmail }) => {
-      toast.success(`Verification email sent to ${sentToEmail}.`);
-      router.push("/verify-email?to=" + sentToEmail);
+    onSuccess: () => {
+      toast.success(`User Registered. Please sign-in`);
+      router.push("/sign-in");
     },
   });
 

@@ -63,19 +63,18 @@ exports.getPayloadClient = void 0;
 var dotenv_1 = __importDefault(require("dotenv"));
 var path_1 = __importDefault(require("path"));
 var payload_1 = __importDefault(require("payload"));
-var nodemailer_1 = __importDefault(require("nodemailer"));
 dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, "../.env"),
 });
-var transporter = nodemailer_1.default.createTransport({
-    host: "smtp.resend.com",
-    secure: true,
-    port: 465,
-    auth: {
-        user: "resend",
-        pass: process.env.RESEND_API_KEY,
-    },
-});
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.resend.com",
+//   secure: true,
+//   port: 465,
+//   auth: {
+//     user: "resend",
+//     pass: process.env.RESEND_API_KEY,
+//   },
+// });
 var cached = global.payload;
 if (!cached) {
     cached = global.payload = {
@@ -101,11 +100,7 @@ var getPayloadClient = function () {
                         return [2 /*return*/, cached.client];
                     }
                     if (!cached.promise) {
-                        cached.promise = payload_1.default.init(__assign({ email: {
-                                transport: transporter,
-                                fromAddress: "onboarding@resend.dev",
-                                fromName: "Perfect-Shine Car Detail"
-                            }, secret: process.env.PAYLOAD_SECRET, local: (initOptions === null || initOptions === void 0 ? void 0 : initOptions.express) ? false : true }, (initOptions || {})));
+                        cached.promise = payload_1.default.init(__assign({ secret: process.env.PAYLOAD_SECRET, local: (initOptions === null || initOptions === void 0 ? void 0 : initOptions.express) ? false : true }, (initOptions || {})));
                     }
                     _d.label = 1;
                 case 1:

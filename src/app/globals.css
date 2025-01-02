@@ -93,3 +93,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-pagination-bullet {
+  width: 7px !important;
+  height: 7px !important;
+  background: black !important;
+ 
+  scale: 0.9 !important;
+}
+
+.swiper-pagination-bullet-active {
+  color: rgb(0, 0, 0);
+  background: red !important ;
+  scale: 1 !important;
+}

@@ -7,8 +7,8 @@ import { AddToCartButtonProps } from "@/types/type";
 
 
 
-export const AddToCartButton = ({product}:AddToCartButtonProps) => {
-  const { addItem } = useCart();
+export const AddToCartButton = ({product , className}:AddToCartButtonProps , ) => {
+  const { addItem , clearCart} = useCart();
   const [isSuccess, setIsSucess] = useState<boolean>(false);
 
   useEffect(() => {
@@ -21,11 +21,11 @@ export const AddToCartButton = ({product}:AddToCartButtonProps) => {
   return (
     <Button
       onClick={() => {
-        addItem(product)
+         addItem(product)
         setIsSucess(true);
       }}
       size={"lg"}
-      className="w-full"
+      className={`${className}`}
     >
       <p className="mt-1">{isSuccess ? "Added!" : "Add to Cart"}</p>
     </Button>

@@ -49,50 +49,56 @@ export default async function page({ params }: singleProductProps) {
               productName={product.name}
             />
           </ol>
-          <div className="grid h-full w-full content-center gap-2 p-2 md:grid-cols-2">
+          <div className="grid h-full w-full content-between gap-2 p-2 md:grid-cols-2">
             <div className="">
               <ImageCard url={validUrls} displayAllImages={true} />
             </div>
 
-            <div className="mx-auto flex w-full max-w-[80%] flex-col gap-3 p-1 text-black">
-              <h1
-                className={`text-3xl font-medium ${perfectshine_font.className}`}
-              >
-                {product.name}
-              </h1>
-              <h2
-                className={`text-2xl font-medium text-gray-300 ${perfectshine_font.className}`}
-              >
-                {product.subtitle}
-              </h2>
-              <div className="flex items-center gap-2">
-                <p className="text-2xl">
-                  {formatPrice(product.price, { currency: "USD" })}
-                </p>
-                <span>{"/"}</span>
-                <p className="text-2xl">
-                  
-                </p>
-              </div>
-              <p className="text-sm">Shipping calculated at checkout.</p>
-              <div className="group inline-flex items-center">
-                <Shield
-                  aria-hidden="true"
-                  className="mr-2 h-6 w-6 flex-shrink-0 text-gray-400"
+            <div className="flex w-full items-center justify-center  p-1 text-black bg-slate-200">
+              <section className="flex flex-col items-center gap-2 p-1 w-[80%] bg-red-100">
+                <h1
+                  className={`text-3xl font-medium ${perfectshine_font.className}`}
+                >
+                  {product.name}
+                </h1>
+                <h2
+                  className={`text-2xl font-medium text-gray-300 ${perfectshine_font.className}`}
+                >
+                  {product.subtitle}
+                </h2>
+                <div className="flex items-center gap-2">
+                  <p className="text-2xl">
+                    {formatPrice(product.price, { currency: "USD" })}
+                  </p>
+                  <span>{"/"}</span>
+                  <p className="text-2xl"></p>
+                </div>
+                <p className="text-sm">Shipping calculated at checkout.</p>
+                <div className="group inline-flex items-center">
+                  <Shield
+                    aria-hidden="true"
+                    className="mr-2 h-6 w-6 flex-shrink-0 text-gray-400"
+                  />
+                  <p className="mt-1 text-muted-foreground">
+                    30 Day Return Guarantee
+                  </p>
+                </div>
+
+                {/* add button */}
+
+                <AddToCartButton
+                  product={product}
+                  className="w-full md:w-[80%]"
                 />
-                <p className="mt-1 text-muted-foreground">
-                  30 Day Return Guarantee
-                </p>
-              </div>
-              <div>
-                <AddToCartButton product={product} />
-              </div>
-              <ProductReel
-                title="Works well with"
-                href="/products"
-                query={{ category: product.category, limit: 4 }}
-                subtitle={`similar high-quality product's just like ${product.name}`}
-              />
+
+                <ProductReel
+                  title="Works well with"
+                  href="/products"
+                  className="grid grid-cols-2"
+                  query={{ category: product.category, limit: 4 }}
+                  subtitle={`similar high-quality product's just like ${product.name}`}
+                />
+              </section>
             </div>
           </div>
         </div>

@@ -9,12 +9,13 @@ import Link from "next/link";
 import { PRODUCT_CATEGORIES } from "@/constant/product-category";
 import { Button } from "@/components/ui/button";
 import { Loader2, X } from "lucide-react";
-import { QuantityControls } from "@/components/cart/quantity-controls";
+
 import { trpc } from "@/trpc/client";
 import { useRouter } from "next/navigation";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Page() {
-  const { items, removeItem, addItem } = useCart();
+  const { items, removeItem} = useCart();
 
   const router = useRouter();
 
@@ -38,17 +39,18 @@ export default function Page() {
     0,
   );
 
-  const fee = 15;
+  const fee = 2;
 
   return (
     <MaxWidthWrapper>
       <div className={`bg-white`}>
-        <div className="pb24 mx-auto flex max-w-2xl flex-col items-center justify-center px-4 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="mx-auto flex max-w-2xl flex-col items-center justify-center px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1
             className={`${perfectshine_font.className} text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
           >
             Shopping Cart
           </h1>
+
           <div
             className={
               items.length === 0
@@ -90,79 +92,75 @@ export default function Page() {
                   </Link>
                 </div>
               ) : null}
-              <ul
-                className={cn({
-                  "divide-y divide-gray-200 border-b border-t border-gray-200":
-                    items.length > 0,
-                })}
-              >
-                {items.map(({ product, quantity }) => {
-                  const label = PRODUCT_CATEGORIES.find(
-                    (lab) => lab.value === product.category,
-                  )?.label;
-                  const { image } = product.images[0];
+              <ScrollArea className="h-56 lg:h-[500px] w-full  p-4">
+                <ul
+                  className={cn({
+                    "divide-y divide-gray-200 border-b border-t border-gray-200":
+                      items.length > 0,
+                  })}
+                >
+                  {items.map(({ product }) => {
+                    const label = PRODUCT_CATEGORIES.find(
+                      (lab) => lab.value === product.category,
+                    )?.label;
+                    const { image } = product.images[0];
 
-                  return (
-                    <li key={product.id} className="flex py-6 sm:py-10">
-                      <div className="flex-shrink-0">
-                        <div className="relative h-24 w-24">
-                          {typeof image !== "string" && image.url ? (
-                            <Image
-                              src={image.url}
-                              alt="product Image"
-                              fill
-                              className="h-full w-full rounded-lg object-cover object-center sm:h-48 sm:w-48"
-                            />
-                          ) : null}
-                        </div>
-                      </div>
-
-                      <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                        <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-                          <div>
-                            <div className="flex justify-between">
-                              <h3 className="text-sm">
-                                <Link
-                                  className="font-medium text-gray-700 hover:text-gray-800"
-                                  href={`/product-info/${product.id}`}
-                                >
-                                  {product.name}
-                                </Link>
-                              </h3>
-                            </div>
-                            <div className="mt-1 flex gap-1 text-sm font-medium text-gray-700 hover:text-gray-800">
-                              <p>Category: </p>
-                              <p>{label}</p>
-                            </div>
-                            <p className="mt-1 text-sm font-medium text-gray-900">
-                              {formatPrice(product.price)}
-                            </p>
-                          </div>
-                          <div className="mt-4 w-20 sm:mt-0 sm:pr-9">
-                            <div className="absolute right-0 top-0 -my-3">
-                              <Button
-                                aria-label="Remove product"
-                                onClick={() => removeItem(product.id)}
-                                variant={"ghost"}
-                              >
-                                <X className="h-6 w-6" aria-hidden="true" />
-                              </Button>
-                            </div>
-                            <div className="absolute right-0 top-12">
-                              <QuantityControls
-                                quantity={quantity}
-                                onIncrease={() => addItem(product)}
-                                onDecrease={() => removeItem(product.id)}
+                    return (
+                      <li key={product.id} className="flex py-6 sm:py-10">
+                        <div className="flex-shrink-0">
+                          <div className="relative h-24 w-24">
+                            {typeof image !== "string" && image.url ? (
+                              <Image
+                                src={image.url}
+                                alt="product Image"
+                                fill
+                                className="h-full w-full rounded-lg object-cover object-center sm:h-48 sm:w-48"
                               />
+                            ) : null}
+                          </div>
+                        </div>
+
+                        <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
+                          <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
+                            <div>
+                              <div className="flex justify-between">
+                                <h3 className="text-sm">
+                                  <Link
+                                    className="font-medium text-gray-700 hover:text-gray-800"
+                                    href={`/product-info/${product.id}`}
+                                  >
+                                    {product.name}
+                                  </Link>
+                                </h3>
+                              </div>
+                              <div className="mt-1 flex gap-1 text-sm font-medium text-gray-700 hover:text-gray-800">
+                                <p>Category: </p>
+                                <p>{label}</p>
+                              </div>
+                              <p className="mt-1 text-sm font-medium text-gray-900">
+                                {formatPrice(product.price)}
+                              </p>
+                            </div>
+                            <div className="mt-4 w-20 sm:mt-0 sm:pr-9">
+                              <div className="absolute right-0 top-0 -my-3">
+                                <Button
+                                  aria-label="Remove product"
+                                  onClick={() => removeItem(product.id)}
+                                  variant={"ghost"}
+                                >
+                                  <X className="h-6 w-6" aria-hidden="true" />
+                                </Button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </ScrollArea>
             </div>
+
             {items.length > 0 ? (
               <section className="mt-16 rounded-lg bg-gray-100 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
                 <h2 className="text-lg font-semibold text-gray-900">

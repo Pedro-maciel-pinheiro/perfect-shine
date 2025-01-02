@@ -32,23 +32,29 @@ export const paymentRounter = router({
       const order = await payload.create({
         collection: "orders",
         data: {
-          _isPaid: false,
+          _isPaid: true,
           products: filteredProducts.map((prod) => prod.id),
-          user: user.id,
+          user:user?.id
         },
       });
+
+      
 
       const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
 
       filteredProducts.forEach((product) => {
         line_items.push({
           price: product.priceId!,
-          quantity:1
+          adjustable_quantity: {
+            enabled: true,
+          },
+          quantity: 1,
+          
         });
       });
 
       line_items.push({
-        price: "price_1Qb7WVCfdbf5sKLktC7dG9i1",
+        price: "price_1QbipRCfdbf5sKLkw7kBr5ge",
         quantity: 1,
         adjustable_quantity: {
           enabled: false,
@@ -59,22 +65,24 @@ export const paymentRounter = router({
         const stripeSession = await stripe.checkout.sessions.create({
           success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
           cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,
-          payment_method_types: [
-            "card",            
-          ],
+          payment_method_types: ["card"],
           mode: "payment",
           metadata: {
             userId: user.id,
             orderId: order.id,
           },
           line_items,
+          shipping_address_collection:{
+            allowed_countries: ['US', 'JP', 'CA' , 'BR']
+          },
+          billing_address_collection:"required"
         });
 
         return { url: stripeSession.url };
       } catch (error) {
         console.log("Stripe error ", error);
 
-        return {url:null}
+        return { url: null };
       }
     }),
 });

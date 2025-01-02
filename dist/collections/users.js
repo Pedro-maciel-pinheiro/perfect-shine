@@ -4,12 +4,11 @@ exports.Users = void 0;
 exports.Users = {
     slug: "users",
     auth: {
-        verify: {
-            generateEmailHTML: function (_a) {
-                var token = _a.token;
-                return "<a href='".concat(process.env.NEXT_PUBLIC_SERVER_URL, "/verify-email?token=").concat(token, "'>verify account</a>");
-            }
-        }
+    // verify:{
+    //   generateEmailHTML: ({token}) => {
+    //     return `<a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}'>verify account</a>`
+    //   }
+    // }
     },
     access: {
         read: function () { return true; },
