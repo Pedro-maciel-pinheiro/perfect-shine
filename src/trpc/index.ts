@@ -9,6 +9,50 @@ export const appRouter = router({
   auth: authRouter,
   payment: paymentRounter,
 
+  // getBanner Query  
+
+  getBanners: publicProcedure
+    .input(
+      z.object({
+        limit: z.number().optional().default(1),
+      }),
+    )
+    .query(async ({ input }) => {
+      const payload = await getPayloadClient();
+      const { docs } = await payload.find({
+        collection: "Product-banner",
+        limit: input.limit,
+        depth: 1,
+      });
+      if (!docs || docs.length === 0) {
+        return null;
+      }
+      return docs;
+    }),
+
+  // single Product Query
+
+  getProduct: publicProcedure
+  .input(
+    z.object({
+      limit: z.number().optional().default(1),
+    }),
+  )
+  .query(async ({ input }) => {
+    const payload = await getPayloadClient();
+    const { docs } = await payload.find({
+      collection: "products",
+      limit: input.limit,
+      depth: 1,
+    });
+    if (!docs || docs.length === 0) {
+      return null;
+    }
+    return docs;
+  }),
+
+   // InfiniteProduct Query
+
   getInfiniteProduct: publicProcedure
     .input(
       z.object({

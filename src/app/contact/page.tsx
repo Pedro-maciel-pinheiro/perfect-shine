@@ -1,8 +1,8 @@
 "use client";
 
+import { useSectionInView } from "@/hooks/active-section-hook";
+
 export default function Contact() {
-  
-  return (
-   <div></div>
-  );
+  const { ref } = useSectionInView("Contact");
+  return <div ref={ref}></div>;
 }

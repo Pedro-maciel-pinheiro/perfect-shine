@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/components/cart/use-cart";
@@ -41,8 +41,7 @@ export const CartTab = () => {
   return (
     <Sheet>
       <SheetTrigger className="group -m-2 flex items-center gap-2 p-2">
-        {itemCount > 0 && (
-          <>
+       
             <span className="h-6 w-px rounded-full bg-gray-400" />
             <span className="ml-2 mt-2 text-sm font-medium text-gray-400 group-hover:text-gray-800">
               {itemCount}
@@ -53,7 +52,7 @@ export const CartTab = () => {
               size={25}
             />
             <svg
-              className="w-2 text-red-600"
+              className={cn("w-2" , itemCount > 0 ? "text-red-600":"text-white")}
               aria-hidden="true"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +69,7 @@ export const CartTab = () => {
 	S2.7,5.5,2.7,5.5H2.6c-0.3,0.1-0.7,0.3-1,0.4C1.4,6,1.4,6.1,1.4,6.3v13c0,0.4,0.3,0.7,0.7,0.7l0,0h4.5C7.1,20.1,7.4,19.8,7.4,19.4"
               ></path>
             </svg>
-          </>
-        )}
+       
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="space-y-2.5 pr-6">

@@ -1,15 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import { ImagesCardProps } from "@/types/type";
+import { AddToCartButton } from "../button/add-to-cart-button";
 
-
-
-export const ImageCard = ({ url, displayAllImages }: ImagesCardProps) => {
+export const ImageCard = ({
+  product,
+  url,
+  displayAllImages,
+}: ImagesCardProps) => {
   return (
-    <section className="flex flex-col lg:grid  w-[90%] md:w-full max-w-4xl gap-2 mb-2 mx-auto">
+    <section className="mx-auto mb-2 flex w-[90%] max-w-4xl flex-col gap-2 md:w-full lg:grid">
       {displayAllImages
         ? url.map((imageUrl, index) => (
-            <div key={index} className={`${index === 2 ? "lg:col-span-2" : ""}`}>
+            <div
+              key={index}
+              className={`${index === 2 ? "relative lg:col-span-2" : ""}`}
+            >
               <Image
                 src={imageUrl}
                 alt={`Product Image ${index + 1}`}
@@ -21,15 +27,16 @@ export const ImageCard = ({ url, displayAllImages }: ImagesCardProps) => {
             </div>
           ))
         : url[0] && (
-            <Image
-              src={url[0]}
-              
-              alt={"product Image"}
-              width={300}
-              height={300}
-              loading="eager"
-              className="rounded-lg"
-            />
+            <div className="overflow-hidden rounded-lg">
+              <Image
+                src={url[0]}
+                alt={"product Image"}
+                width={300}
+                height={300}
+                loading="eager"
+                className="rounded-lg hover:scale-105 transition-all duration-300"
+              />
+            </div>
           )}
     </section>
   );

@@ -68,6 +68,61 @@ var payment_router_1 = require("./payment-router");
 exports.appRouter = (0, trpc_1.router)({
     auth: auth_router_1.authRouter,
     payment: payment_router_1.paymentRounter,
+    // getBanner Query  
+    getBanners: trpc_1.publicProcedure
+        .input(zod_1.z.object({
+        limit: zod_1.z.number().optional().default(1),
+    }))
+        .query(function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+        var payload, docs;
+        var input = _b.input;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0: return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
+                case 1:
+                    payload = _c.sent();
+                    return [4 /*yield*/, payload.find({
+                            collection: "Product-banner",
+                            limit: input.limit,
+                            depth: 1,
+                        })];
+                case 2:
+                    docs = (_c.sent()).docs;
+                    if (!docs || docs.length === 0) {
+                        return [2 /*return*/, null];
+                    }
+                    return [2 /*return*/, docs];
+            }
+        });
+    }); }),
+    // single Product Query
+    getProduct: trpc_1.publicProcedure
+        .input(zod_1.z.object({
+        limit: zod_1.z.number().optional().default(1),
+    }))
+        .query(function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+        var payload, docs;
+        var input = _b.input;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0: return [4 /*yield*/, (0, get_payload_1.getPayloadClient)()];
+                case 1:
+                    payload = _c.sent();
+                    return [4 /*yield*/, payload.find({
+                            collection: "products",
+                            limit: input.limit,
+                            depth: 1,
+                        })];
+                case 2:
+                    docs = (_c.sent()).docs;
+                    if (!docs || docs.length === 0) {
+                        return [2 /*return*/, null];
+                    }
+                    return [2 /*return*/, docs];
+            }
+        });
+    }); }),
+    // InfiniteProduct Query
     getInfiniteProduct: trpc_1.publicProcedure
         .input(zod_1.z.object({
         limit: zod_1.z.number().min(1).max(100),

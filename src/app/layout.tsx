@@ -6,6 +6,8 @@ import Footer from "@/components/footer/footer";
 import HeaderNavigation from "@/components/navigation/header-nav";
 import Providers from "@/components/providers";
 import { Toaster } from "sonner";
+import Menu from "@/components/menu/menu";
+import ActiveSectionContextProvider from "@/context/active-section";
 
 const anek = Anek_Devanagari({ subsets: ["latin"] });
 
@@ -23,14 +25,17 @@ export default async function RootLayout({
   return (
     <html lang={"en"} className="h-full">
       <body className={`relative h-full antialiased ${anek.className}`}>
-        <main className="relative flex  flex-col ">
-          <Providers>
-            <HeaderNavigation />
-            <div className="flex-1 flex-grow min-h-screen">{children}</div>
-            <Footer />
-          </Providers>
-        </main>
-        <Toaster position="top-center" richColors/>
+        <ActiveSectionContextProvider>
+          <main className="relative flex flex-col">
+            <Providers>
+              <HeaderNavigation />
+              <Menu />
+              <div className="min-h-screen flex-1 flex-grow">{children}</div>
+              <Footer />
+            </Providers>
+          </main>
+          <Toaster position="top-center" richColors />
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );

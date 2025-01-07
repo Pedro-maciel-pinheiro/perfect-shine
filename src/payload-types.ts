@@ -12,6 +12,7 @@ export interface Config {
     products: Product;
     media: Media;
     orders: Order;
+    'Product-banner': ProductBanner;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -31,8 +32,6 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
-  _verified?: boolean | null;
-  _verificationToken?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password: string | null;
@@ -48,7 +47,7 @@ export interface Product {
   subtitle: string;
   description?: string | null;
   price: number;
-  category: 'wash product' | 'wash book';
+  category: 'car detail product' | 'car detail products kit' | 'schedule a wash';
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   priceId?: string | null;
   stripeId?: string | null;
@@ -117,6 +116,21 @@ export interface Order {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Product-banner".
+ */
+export interface ProductBanner {
+  id: string;
+  title: string;
+  description?: string | null;
+  images: {
+    image: string | Media;
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
@@ -152,6 +166,6 @@ export interface PayloadMigration {
 
 
 declare module 'payload' {
-  //@ts-ignore
+  //@ts-expect-error
   export interface GeneratedTypes extends Config {}
 }

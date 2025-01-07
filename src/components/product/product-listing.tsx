@@ -3,17 +3,14 @@ import React, { useEffect, useState } from "react";
 import { ProductListingProps } from "@/types/type";
 import { ProductPlaceHolder } from "./product-place-holder";
 import Link from "next/link";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { PRODUCT_CATEGORIES } from "@/constant/product-category";
 import { ImageCard } from "../custom/image-card";
 import { AddToCartButton } from "../button/add-to-cart-button";
-import { useCart } from "../cart/use-cart";
-import { Button } from "../ui/button";
-import ImageSlider from "../custom/image-slider";
 
 const ProductListing = ({ product, index }: ProductListingProps) => {
-  const { addItem } = useCart();
   const [isVisible, setIsVisible] = useState<boolean>(false);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,16 +32,23 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
 
   if (isVisible && product) {
     return (
-      <Link
-        href={`/product-info/${product.id}`}
-        className="flex w-full items-center justify-center"
-      >
+      <section className="flex w-full items-center justify-center ">
         <div className="flex w-fit flex-col items-center">
-          <div className="">
-            <ImageCard url={validUrls} displayAllImages={false} />
-            
-
-            {/* <AddToCartButton product={product}/> */}
+          <div className="group relative">
+            <AddToCartButton
+              product={product}
+              className={cn(
+                "text-transparent absolute bottom-0 z-40 mb-2 w-full rounded-none bg-transparent transition-all duration-300",
+                "group-hover:bg-black/90 group-hover:text-white", 
+               
+              )}
+            />
+            <Link
+              href={`/product-info/${product.id}`}
+              className="flex w-full items-center justify-center"
+            >
+              <ImageCard url={validUrls} displayAllImages={false} />
+            </Link>
           </div>
 
           <div className="flex flex-col px-2 md:self-start">
@@ -57,7 +61,7 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             </p>
           </div>
         </div>
-      </Link>
+      </section>
     );
   }
 

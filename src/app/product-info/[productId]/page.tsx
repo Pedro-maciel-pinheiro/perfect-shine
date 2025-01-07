@@ -54,18 +54,19 @@ export default async function page({ params }: singleProductProps) {
               <ImageCard url={validUrls} displayAllImages={true} />
             </div>
 
-            <div className="flex w-full items-center justify-center  p-1 text-black bg-slate-200">
-              <section className="flex flex-col items-center gap-2 p-1 w-[80%] bg-red-100">
+            <div className="flex w-full items-center justify-center  p-1 text-black ">
+              <section className="flex flex-col items-center gap-2 p-1 w-[80%] ">
                 <h1
                   className={`text-3xl font-medium ${perfectshine_font.className}`}
                 >
                   {product.name}
                 </h1>
                 <h2
-                  className={`text-2xl font-medium text-gray-300 ${perfectshine_font.className}`}
+                  className={`text-2xl font-medium text-gray-500 ${perfectshine_font.className}`}
                 >
                   {product.subtitle}
                 </h2>
+               
                 <div className="flex items-center gap-2">
                   <p className="text-2xl">
                     {formatPrice(product.price, { currency: "USD" })}

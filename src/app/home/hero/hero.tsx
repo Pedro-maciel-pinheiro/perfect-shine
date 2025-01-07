@@ -1,19 +1,21 @@
+
 import React from "react";
 import Image from "next/image";
+
 
 export default function HeroPage() {
   
   return (
-    <section className="flex w-full flex-col items-center justify-center bg-black">
+    <section className="flex w-full flex-col items-center justify-center bg-black ">
       <div className="relative overflow-hidden">
         <span className="absolute flex h-full w-full items-center justify-center bg-black/50">
-          <Image
+          {/* <Image
             src={"/logo/logo-white.png"}
             alt="perfect-shine logo"
             width={800}
             height={800}
-            className="mb-10"
-          />
+            className="mb-10 w-[60%] lg:w-[50%]"
+          /> */}
         </span>
         <video
           src="/video/main-page-video.mp4"

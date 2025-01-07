@@ -13,12 +13,13 @@ var dotenv_1 = __importDefault(require("dotenv"));
 var products_1 = require("./collections/products/products");
 var media_1 = require("./collections/media");
 var orders_1 = require("./collections/orders");
+var product_banner_1 = require("./collections/product-banner");
 dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, "../.env"),
 });
 exports.default = (0, config_1.buildConfig)({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
-    collections: [users_1.Users, products_1.Products, media_1.Media, orders_1.Orders],
+    collections: [users_1.Users, products_1.Products, media_1.Media, orders_1.Orders, product_banner_1.ProductBanner],
     routes: {
         admin: "/sell",
     },

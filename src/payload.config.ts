@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 import { Products} from "./collections/products/products";
 import { Media } from "./collections/media";
 import { Orders } from "./collections/orders";
+import { ProductBanner } from "./collections/product-banner";
 
 
 dotenv.config({
@@ -16,7 +17,7 @@ dotenv.config({
 
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
-  collections: [Users , Products , Media , Orders ],
+  collections: [Users , Products , Media , Orders ,ProductBanner],
   routes: {
     admin: "/sell",
   },

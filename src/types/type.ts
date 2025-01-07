@@ -70,6 +70,7 @@ export interface ProductListingProps {
 export interface ImagesCardProps {
   url: string[];
   displayAllImages:boolean
+  product?:Product | null
 }
 export interface ImagesSliderProps {
   url: string[];
@@ -80,4 +81,12 @@ export interface QuantityControlsProps {
   quantity: number;
   onIncrease: () => void;
   onDecrease: () => void;
+}
+
+export interface ProductReelProps {
+  title?: string;
+  subtitle?: string;
+  href?: string;
+  query: TQueryValidator;
+  className: string;
 }
