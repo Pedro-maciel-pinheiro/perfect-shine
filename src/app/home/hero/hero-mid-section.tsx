@@ -1,18 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { service_information } from "@/constant/hero-service-options";
-import Link from "next/link";
 import { motion } from "framer-motion";
-
-import { SectionHeader } from "@/components/section-header";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 
 export const HeroMidSection = () => {
   const animationDelay = 0.5;
   return (
     <MaxWidthWrapper className="">
-      <SectionHeader title={"What we use ?"} />
       <div className="mx-auto grid h-auto w-full max-w-5xl items-center lg:grid-cols-2">
         <motion.span
           initial={{ opacity: 0, y: 50 }}
@@ -49,37 +44,6 @@ export const HeroMidSection = () => {
           </p>
         </motion.div>
       </div>
-      <SectionHeader title={"Bring it back to life"} />
-      <ul className="grid grid-cols-2 gap-4 px-2 lg:grid-cols-4">
-        {service_information.map((service, index) => (
-          <motion.li
-            key={index}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              delay: index * animationDelay,
-              duration: 0.5,
-              damping: 15,
-            }}
-            viewport={{ once: true }}
-          >
-            <Link href={""}>
-              <div className="flex flex-col">
-                <span className="overflow-hidden rounded-md">
-                  <Image
-                    src={service.img_src}
-                    alt={service.title}
-                    width={450}
-                    height={350}
-                    className="rounded-md transition-all duration-300 hover:scale-105"
-                  />
-                </span>
-                <p className="mt-2 text-xl font-semibold">{service.title}</p>
-              </div>
-            </Link>
-          </motion.li>
-        ))}
-      </ul>
     </MaxWidthWrapper>
   );
 };

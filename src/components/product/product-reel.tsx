@@ -1,6 +1,5 @@
 "use client";
 
-import { TQueryValidator } from "@/lib/validators/query-validator";
 import { Product } from "@/payload-types";
 import { trpc } from "@/trpc/client";
 import Link from "next/link";
@@ -41,9 +40,9 @@ const ProductReel = ({
   }
 
   return (
-    <section className="py-4 md:w-[100%] ">
-      <div className="mb-4 md:flex md:items-center md:justify-between">
-        <div className="max-w-2xl px-4 lg:max-w-4xl lg:px-0">
+    <section className="py-2 w-full">
+      <div className="mb-4 md:flex md:items-center md:justify-between ">
+        <div className="max-w-2xl px- lg:max-w-4xl lg:px-2">
           {title ? (
             <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl ">
               {title}
@@ -66,7 +65,7 @@ const ProductReel = ({
 
       <div className="relative">
         <div className="mt-6 flex w-full items-center">
-          <div className={`w-full gap-x-1 md:gap-x-4 gap-y-2 ${className}`}>
+          <div className={`w-full gap-x-3 md:gap-x-4 gap-y-2 ${className}`}>
             {map.map((product, i) => (
               <ProductListing
                 key={`product-${i}`}

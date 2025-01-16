@@ -13,6 +13,10 @@ export type CartItem = {
 
 export type SectionHeaderProps = {
   title: string;
+  titleColor?:string
+  spanColor?:string
+  className?:string
+
 };
 
 export type searchParamsProps = {

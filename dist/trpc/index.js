@@ -98,7 +98,7 @@ exports.appRouter = (0, trpc_1.router)({
     // single Product Query
     getProduct: trpc_1.publicProcedure
         .input(zod_1.z.object({
-        limit: zod_1.z.number().optional().default(1),
+        limit: zod_1.z.number().min(1).max(50).optional().default(1),
     }))
         .query(function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
         var payload, docs;

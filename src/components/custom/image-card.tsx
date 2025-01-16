@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { ImagesCardProps } from "@/types/type";
-import { AddToCartButton } from "../button/add-to-cart-button";
+
 
 export const ImageCard = ({
   product,
@@ -9,7 +9,7 @@ export const ImageCard = ({
   displayAllImages,
 }: ImagesCardProps) => {
   return (
-    <section className="mx-auto mb-2 flex w-[90%] max-w-4xl flex-col gap-2 md:w-full lg:grid">
+    <section className="mx-auto mb-2 flex w-full max-w-4xl flex-col gap-2  lg:grid">
       {displayAllImages
         ? url.map((imageUrl, index) => (
             <div
@@ -27,7 +27,7 @@ export const ImageCard = ({
             </div>
           ))
         : url[0] && (
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-lg ">
               <Image
                 src={url[0]}
                 alt={"product Image"}

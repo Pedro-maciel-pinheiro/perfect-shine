@@ -14,6 +14,7 @@ import {
 } from "@/components/custom/slider-button-style";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { perfectshine_font } from "@/constant/font";
 
 const ImageSlider = ({ url }: ImagesSliderProps) => {
   const [swiper, setSwiper] = useState<null | SwiperType>(null);
@@ -34,42 +35,12 @@ const ImageSlider = ({ url }: ImagesSliderProps) => {
   }, [swiper, url]);
 
   return (
-    <section className="group relative aspect-square overflow-hidden rounded-lg bg-zinc-100">
-      <div className="absolute inset-0 z-10 opacity-0 transition group-hover:opacity-100">
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            swiper?.slideNext();
-          }}
-          aria-label="next image"
-          className={cn(activeStyles, "right-3 transition", {
-            [inactiveStyles]: slideconfig.isEnd,
-            "hover:bg-primary-300 text-primary-800 opacity-100":
-              !slideconfig.isEnd,
-          })}
-        >
-          <ChevronRight className="h-4 w-4 text-zinc-700" />
-        </button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            swiper?.slidePrev();
-          }}
-          aria-label="previus image"
-          className={cn(activeStyles, "left-3 transition", {
-            [inactiveStyles]: slideconfig.isBeginning,
-            "hover:bg-primary-300 text-primary-800 opacity-100":
-              !slideconfig.isBeginning,
-          })}
-        >
-          <ChevronLeft className="h-4 w-4 text-zinc-700" />
-        </button>
-      </div>
+    <section className="group relative grid rounded-lg">
       <Swiper
         pagination={{
-          renderBullet:(_, className) => {
-            return `<span class="rounded-full transtion ${className}"></span>`
-          }
+          renderBullet: (_, className) => {
+            return `<span class="rounded-full transtion ${className}"></span>`;
+          },
         }}
         onSwiper={(swiper) => setSwiper(swiper)}
         spaceBetween={50}
@@ -78,16 +49,44 @@ const ImageSlider = ({ url }: ImagesSliderProps) => {
         className="h-full w-full"
       >
         {url.map((image, index) => (
-          <SwiperSlide key={index} className="relative z-10 h-full w-full">
+          <SwiperSlide key={index} className="h-full w-full">
             <Image
               src={image}
               alt="Product Image"
-              className="-z-10 h-full w-full object-cover object-center"
-              fill
+              className="h-full w-full rounded-lg object-cover object-center"
+              width={1000}
+              height={1000}
             />
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="flex h-20 w-full items-center justify-center gap-2">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            swiper?.slidePrev();
+          }}
+          className={cn("aspect-square h-8 w-8 rounded-full transition-all" ,{[inactiveStyles]:slideconfig.isBeginning})}
+          disabled={slideconfig.isBeginning}
+        >
+          <ChevronLeft className="-mx-[2px] h-8 w-8 " />
+        </button>
+        <span
+          className={`mt-1 flex w-20 items-center justify-center text-lg ${perfectshine_font.className}`}
+        >
+          {activeIndex + 1} {"/"} {url.length}
+        </span>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            swiper?.slideNext();
+          }}
+          className={cn("aspect-square h-8 w-8 rounded-full transition-all",{[inactiveStyles]:slideconfig.isEnd})}
+          disabled={slideconfig.isEnd}
+        >
+          <ChevronRight className={"mx-[2px] h-8 w-8 "} />
+        </button>
+      </div>
     </section>
   );
 };

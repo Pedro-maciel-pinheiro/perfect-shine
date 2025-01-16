@@ -26,9 +26,9 @@ export const AddToCartButton = ({product , className}:AddToCartButtonProps , ) =
         setIsSucess(true);
       }}
       size={"lg"}
-      className={`${className}`}
+      className={`${className} `}
     >
-      <p className="mt-1 flex gap-2">{isSuccess ? "Added!" : "Add to Cart"} <ShoppingCart/></p>
+      <p className="mt-1 flex gap-2 justify-center">{isSuccess ? "Added!" : "Add to Cart"} <ShoppingCart/></p>
     </Button>
   );
 };

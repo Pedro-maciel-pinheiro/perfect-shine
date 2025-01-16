@@ -11,7 +11,6 @@ import { AddToCartButton } from "../button/add-to-cart-button";
 const ProductListing = ({ product, index }: ProductListingProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -22,25 +21,20 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
 
   if (!product || !isVisible) return <ProductPlaceHolder />;
 
-  const label = PRODUCT_CATEGORIES.find(
-    ({ value }) => value === product.category,
-  )?.label;
-
   const validUrls = product.images
     .map(({ image }) => (typeof image === "string" ? image : image.url))
     .filter(Boolean) as string[];
 
   if (isVisible && product) {
     return (
-      <section className="flex w-full items-center justify-center ">
+      <section className="flex w-full items-center justify-center">
         <div className="flex w-fit flex-col items-center">
-          <div className="group relative">
+          <div className="group relative ">
             <AddToCartButton
               product={product}
               className={cn(
-                "text-transparent absolute bottom-0 z-40 mb-2 w-full rounded-none bg-transparent transition-all duration-300",
-                "group-hover:bg-black/90 group-hover:text-white", 
-               
+                "absolute bottom-0 z-40 mb-2 hidden w-full rounded-none bg-transparent text-transparent transition-all duration-300 md:block  ",
+                "group-hover:bg-black/80 group-hover:text-white ",
               )}
             />
             <Link
@@ -51,12 +45,14 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
             </Link>
           </div>
 
-          <div className="flex flex-col px-2 md:self-start">
-            <h1 className={`mt-4 w-32 text-[16px] font-medium text-gray-900`}>
+          <div className="flex h-24 w-full flex-col items-start px-2 md:self-start">
+            <h1
+              className={`mt-4 overflow-hidden text-sm font-medium text-gray-900 md:text-lg`}
+            >
               {product.name}
             </h1>
 
-            <p className="mt-1 text-[16px] font-medium text-gray-800">
+            <p className="mt-1 text-sm font-medium text-gray-800 md:text-lg">
               {formatPrice(product.price)}
             </p>
           </div>

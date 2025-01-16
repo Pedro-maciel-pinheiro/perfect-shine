@@ -1,21 +1,31 @@
 "use client";
-import { Aldrich } from "next/font/google";
 import { motion } from "framer-motion";
 import { SectionHeaderProps } from "@/types/type";
+import Image from "next/image";
+import { perfectshine_font } from "@/constant/font";
 
-const source = Aldrich({ subsets: ["latin"], weight: "400" });
 
-export const SectionHeader = ({ title }: SectionHeaderProps) => {
+export const SectionHeader = ({ title ,spanColor,titleColor , className}: SectionHeaderProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className={`${source.className} relative mx-auto mb-5 mt-5 lg:mb-20  lg:mt-20 flex items-center justify-center px-2 md:px-0`}
+      className={`${perfectshine_font.className} 
+      relative mx-auto  flex w-full items-center justify-center  md:px-0 ${className}`}
     >
-      <span className="mt-8 h-[2px] w-full bg-black md:mt-0" />
-      <h2 className="absolute flex w-96 justify-center bg-white text-xl font-semibold uppercase text-black md:text-xl">
+      <Image
+        src={"/logo/logo-2.png"}
+        alt="logo Image"
+        width={500}
+        height={500}
+        className="w-16"
+      />
+
+      <span className={`mt-8 h-[2px] w-full  md:mt-0 ${spanColor}`} />
+      <h2 className={`absolute flex md:w-96 justify-center 
+        text-xl font-semibold uppercase  md:text-xl ${titleColor}`}>
         {title}
       </h2>
     </motion.div>

@@ -16,6 +16,8 @@ import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 import { ZodError } from "zod";
 import { useRouter } from "next/navigation";
+import { perfectshine_font } from "@/constant/font";
+import Link from "next/link";
 
 export default function Page() {
   const router = useRouter();
@@ -53,69 +55,89 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex min-h-screen bg-gray-100">
-        <div className="loginPage-bg-image relative hidden w-1/2 bg-cover bg-center lg:block" />
+      <div className={`${perfectshine_font.className} text-black`}>
+        <div className="relative flex min-h-screen">
+          <div className="registerPage-bg-image relative  w-full bg-cover bg-center lg:block" />
 
-        <div className="mt-10 flex w-full flex-col items-center justify-center bg-gray-100 p-6 lg:w-1/2">
-          <div className="mb-2">
+          <div className="absolute z-10 mb-2 flex h-[450px] w-full items-center justify-center">
             <Image
-              src={"/logo/logo-original.png"}
+              src={"/logo/logo-white.png"}
               alt=""
               width={380}
               height={380}
             />
           </div>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full max-w-sm space-y-6 rounded-lg bg-white p-8 shadow-lg"
-          >
-            <h2 className="text-center text-2xl font-semibold text-gray-800">
-              Login
-            </h2>
+          <div className="absolute z-20 flex h-full w-full flex-col items-center justify-center p-6 ">
+            <div className="w-full max-w-sm space-y-6 rounded-lg border-2 bg-white/95 p-8 shadow-lg ">
+              <h2 className={`text-center text-xl font-semibold `}>
+                Register
+              </h2>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col  gap-2"
+              >
+                <div>
+                  <Label htmlFor="email" className="font-semibold">Email</Label>
+                  <Input
+                    {...register("email")}
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.email,
+                    })}
+                    placeholder="you@exemple.com"
+                  />
+                  {errors?.email && (
+                    <p className="text-sm text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
 
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                {...register("email")}
-                className={cn({
-                  "focus-visible:ring-red-500": errors.email,
-                })}
-                placeholder="you@exemple.com"
-              />
-              {errors?.email && (
-                <p className="text-sm text-red-500">{errors.email.message}</p>
-              )}
+                <div>
+                  <Label htmlFor="password" className="font-semibold">Password</Label>
+                  <Input
+                    {...register("password")}
+                    type="password"
+                    className={cn({
+                      "focus-visible:ring-red-500": errors.password,
+                    })}
+                    placeholder="*********"
+                  />
+                  {errors?.password && (
+                    <p className="text-sm text-red-500">
+                      {errors.password.message}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <Button
+                    disabled={isLoading}
+                    className="mt-2 w-full rounded-md bg-red-500 py-2 text-white transition duration-200 hover:bg-red-700"
+                  >
+                    Login
+                  </Button>
+                </div>
+              </form>
+              <div className="relative">
+              <div
+                className="absolute inset-0 flex items-center"
+                aria-hidden="true"
+              >
+                <span className="w-full border-t bg-background" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className=" px-2 text-muted-foreground">
+                  or
+                </span>
+              </div>
             </div>
 
-            <div>
-              <Label htmlFor="password">Password</Label>
-              <Input
-                {...register("password")}
-                type="password"
-                className={cn({
-                  "focus-visible:ring-red-500": errors.password,
-                })}
-                placeholder="*********"
-              />
-              {errors?.password && (
-                <p className="text-sm text-red-500">
-                  {errors.password.message}
-                </p>
-              )}
+            <Link href={"/sign-in"} className="font-medium w-full flex items-center justify-center hover:underline ">
+             Already have an account ?
+            </Link>
             </div>
-
-            <div>
-              <Button className="w-full rounded-md bg-red-500 py-2 text-white transition duration-200 hover:bg-red-700">
-                Login
-              </Button>
-            </div>
-
-            <div className="text-center font-medium">
-              <a href="#" className="text-sm hover:underline">
-                Forgot your password?
-              </a>
-            </div>
-          </form>
+            
+          </div>
         </div>
       </div>
     </>

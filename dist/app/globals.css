@@ -17,6 +17,43 @@
   background-size: cover;
   background-position: center;
 }
+
+.registerPage-bg-image {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../../public/img/m5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.productPage-bg-image {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../../public/img/m5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right, 10%;
+}
+
+@media (max-width: 768px) {
+  .productPage-bg-image {
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .productPage-bg-image {
+    background-position: left;
+  }
+}
+
 .emailPage-bg-image {
   background-image: linear-gradient(
       to top,
@@ -98,7 +135,7 @@
   width: 7px !important;
   height: 7px !important;
   background: black !important;
- 
+
   scale: 0.9 !important;
 }
 

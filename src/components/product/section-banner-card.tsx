@@ -3,7 +3,6 @@ import React from "react";
 import { trpc } from "@/trpc/client";
 import Image from "next/image";
 
-
 export const SectionBannerCard = () => {
   const { data: banners, isLoading } = trpc.getBanners.useQuery({
     limit: 1,
@@ -26,25 +25,25 @@ export const SectionBannerCard = () => {
   if (validUrls.length === 0) {
     return <div>No valid images available</div>;
   }
-  console.log(sectionImage.description);
+  
   return (
-    <section>
-      <div className="grid md:grid-cols-2 ">
-        <div className="h-full w-full">
-          <Image
-            src={validUrls[0]}
-            alt={sectionImage.title || "Banner image"}
-            width={1920}
-            height={1080}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-        <div className="flex items-center justify-center gap-2 bg-black uppercase text-white">
+    <section className="h-full w-full p-2">
+      <div className="mb-10 mt-10 grid md:gap-2 md:grid-cols-2">
+        <Image
+          src={validUrls[0]}
+          alt={sectionImage.title || "Banner image"}
+          width={1500}
+          height={1500}
+          className="h-80 md:rounded-s-lg object-cover object-center"
+        />
+        <div className="flex max-h-80 w-full items-center justify-center gap-2 md:rounded-e-lg bg-black uppercase text-white">
           <div className="mx-12 my-10 flex flex-col items-center justify-center md:my-0">
-            <h2 className="text-3xl font-semibold">{sectionImage.title}</h2>
-            <p className="mx-1 max-w-96 self-start text-sm font-medium">
-              {sectionImage.description}
-            </p>
+            <div className="flex flex-col items-start gap-2">
+              <h2 className="text-3xl font-semibold">{sectionImage.title}</h2>
+              <p className="mx-1 self-start text-sm font-medium">
+                {sectionImage.description}
+              </p>
+            </div>
           </div>
         </div>
       </div>

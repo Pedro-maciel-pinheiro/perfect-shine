@@ -35,7 +35,7 @@ export const appRouter = router({
   getProduct: publicProcedure
   .input(
     z.object({
-      limit: z.number().optional().default(1),
+      limit: z.number().min(1).max(50).optional().default(1),
     }),
   )
   .query(async ({ input }) => {
