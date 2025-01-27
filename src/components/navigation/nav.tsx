@@ -6,19 +6,22 @@ import { cookies } from "next/headers";
 import UserAccountNav from "@/components/user-account-nav";
 import { NavigationLinks } from "@/components/navigation/nav-links";
 import Image from "next/image";
+import { link_path } from "@/constant/link-path";
+import NavMobile from "./nav-mobile";
 
 export default async function HeaderNavigation() {
   const nextCookies = cookies();
   const { user } = await getServerSideUser(nextCookies);
-  console.log(user);
+  const menu = link_path;
 
   return (
     <>
       <nav
-        className={`${perfectshine_font.className} sticky top-0 z-50 hidden 
-        h-12 w-full items-center justify-center bg-black text-white md:flex`}
+        className={`${perfectshine_font.className} sticky top-0 flex
+        z-50  h-12 w-full items-center justify-between lg:justify-center
+         bg-black text-white `}
       >
-        <Link href={"/"} className="absolute left-0 flex items-center gap-1">
+        <Link href={"/"} className="absolute left-0 lg:flex items-center gap-1 hidden ">
           <Image
             src={"/logo/logo-2.png"}
             alt="logo Image"
@@ -28,8 +31,11 @@ export default async function HeaderNavigation() {
           />
           <h1 className="mb-1">PERFECT-SHINE</h1>
         </Link>
-        <div className="uppercase">
-          <NavigationLinks />
+        <div className="uppercase hidden lg:block">
+          <NavigationLinks menu={menu} className="flex gap-3"/>
+        </div>
+        <div className="px-4">
+          <NavMobile menu={menu} />
         </div>
         <div className="absolute right-0 mx-6 flex items-center gap-2">
           {user ? null : (

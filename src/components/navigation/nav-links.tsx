@@ -1,23 +1,25 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { link_path } from "@/constant/link-path";
 import Link from "next/link";
+import { linkPathProps, MenuProps } from "@/types/type";
 
-export const NavigationLinks = () => {
+export const NavigationLinks = ({ menu ,className }:MenuProps) => {
   const pathname = usePathname();
   return (
-    <div className="flex gap-3">
-      {link_path.map((link) => (
+    <div className={`${className}`}>
+      {menu.map((link: linkPathProps) => (
         <Link
           key={link.title}
           href={link.href}
-          className={` text-sm font-medium ${
+          className={`text-sm font-medium ${
             pathname === link.href
-              ? "border-b-2 border-red-600 "
-              : "text-white hover:border-b-2 hover:border-red-600 "
+              ? "border-b-2 border-red-600"
+              : "text-white hover:border-b-2 hover:border-red-600"
           } transition-colors duration-200`}
-        >{link.title}</Link>
+        >
+          {link.title}
+        </Link>
       ))}
     </div>
   );

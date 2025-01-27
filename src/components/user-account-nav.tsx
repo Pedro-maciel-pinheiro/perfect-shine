@@ -19,12 +19,13 @@ const UserAccountNav = ({ user }: { user: User }) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="overflow-visible">
         <Button variant={"ghost"} className="relative bg-transparent">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all hover:border-black">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full
+           border-2 transition-all hover:border-black">
             <User2 />
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-60 bg-white" align="end">
+      <DropdownMenuContent className=" bg-white" align="end">
         <ol className="flex items-center justify-start gap-2 p-2">
           <li className="flex flex-col space-y-0.5 leading-none">
             <p className="text-blck text-sm font-medium">{user.email}</p>

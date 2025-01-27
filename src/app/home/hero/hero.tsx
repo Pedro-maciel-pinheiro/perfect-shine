@@ -21,7 +21,7 @@ export default function HeroPage() {
               alt="perfect-shine logo"
               width={800}
               height={800}
-              className="mb-16 w-[60%] lg:w-[800px]"
+              className="mb-16 p-8 lg:p-0 lg:w-[800px]"
             />
           </motion.span>
         </div>
@@ -30,15 +30,7 @@ export default function HeroPage() {
           autoPlay
           loop
           muted
-          className="hidden object-cover lg:block"
-        />
-
-        <Image
-          src={"/img/background-md-screen.jpg"}
-          alt="background image mid screen"
-          width={1000}
-          height={1000}
-          className="block lg:hidden"
+          className="object-cover  w-full  min-h-96"
         />
       </div>
     </section>

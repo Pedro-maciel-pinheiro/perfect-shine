@@ -5,6 +5,15 @@ import { Product } from "@/payload-types";
 
 
 
+export type linkPathProps = {
+  title:string
+  href:string
+}
+
+export type MenuProps = {
+  menu:linkPathProps[]
+  className?:string
+}
 
 export type CartItem = {
   product: Product;

@@ -1,6 +1,8 @@
 
 
 
+
+
 export const link_path = [ 
     {
         title:"Home",
@@ -14,8 +16,4 @@ export const link_path = [
         title:"Book a detail",
         href:"/book-a-detail"
     },
-    {
-        title:"Contact",
-        href:"/contact"
-    },
-]as const
+]

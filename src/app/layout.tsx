@@ -21,8 +21,8 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={"en"} className="h-full">
-      <body className={`relative h-full antialiased ${anek.className}`}>
+    <html lang={"en"}>
+      <body className={`${anek.className}`}>
         <main className="relative flex flex-col">
           <Providers>
             <HeaderNavigation />

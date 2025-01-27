@@ -153,9 +153,7 @@ export default async function page({ params }: singleProductProps) {
         </div>
       </section>
 
-      <section className="min-h-screen">
-
-      </section>
+      
     </>
   );
 }
