@@ -7,9 +7,9 @@ import { HeroService } from "./hero/hero-service";
 
 export default function HomePage() {
   return (
-    <div className="">
+    <div className="mx-auto flex h-full w-full flex-col items-center">
       <HeroPage />
-      <div className="max-w-screen-2xl py-2 px-4 md:p-8">
+      <div className="max-w-screen-2xl p-2 md:p-8">
         <SectionHeader title={"What we use ?"} titleColor={"text-black bg-white"} spanColor={"bg-black"}  className="lg:my-14"/>
         <HeroMidSection />
         <SectionHeader title={"Bring it back to life"} titleColor={"text-black bg-white"} spanColor={"bg-black"}  className="lg:my-14"/>
