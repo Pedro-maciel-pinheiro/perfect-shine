@@ -6,13 +6,12 @@ import Footer from "@/components/footer/footer";
 import HeaderNavigation from "@/components/navigation/nav";
 import Providers from "@/components/providers";
 import { Toaster } from "sonner";
+import { metadata_info } from "@/constant/meta";
 
 const anek = Anek_Devanagari({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Perfect Shine",
-  description: "",
-};
+export const metadata = metadata_info
+  
 
 export default async function RootLayout({
   children,

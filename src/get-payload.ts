@@ -36,7 +36,7 @@ interface Args {
 export const getPayloadClient = async ({
   initOptions,
 }: Args = {}): Promise<Payload> => {
-  if (!process.env.PAYLOAD_SECRET) {
+  if (!process.env.RESEND_API_KEY) {
     throw new Error("PAYLOAD_SECRET is missing");
   }
   if (cached.client) {
@@ -45,7 +45,7 @@ export const getPayloadClient = async ({
 
   if (!cached.promise) {
     cached.promise = payload.init({
-      secret: process.env.PAYLOAD_SECRET,
+      secret: process.env.RESEND_API_KEY,
       local: initOptions?.express ? false : true,
       ...(initOptions || {}),
     });
