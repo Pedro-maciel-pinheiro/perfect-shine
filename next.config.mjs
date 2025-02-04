@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "perfect-shine-payload.up.railway.app",
-      },
-    ],
-    domains: ["localhost"],
+    domains:[
+      "localhost",
+      "perfect-shine-payload.up.railway.app",
+    ]
   },
 };
 
