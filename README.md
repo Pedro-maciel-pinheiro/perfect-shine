@@ -2,7 +2,7 @@
 <body>
   <h1>🌟 Perfect Shine 🌟</h1>
   <p>
-    Welcome to <strong>Perfect Shine Clothes Shop</strong>, a modern e-commerce platform showcasing cutting-edge web technologies. This project is a testament to seamless integration, efficient functionality, and a sleek user interface designed to elevate the shopping experience.
+    Welcome to <strong>Perfect Shine </strong>, a modern e-commerce platform showcasing cutting-edge web technologies. This project is a testament to seamless integration, efficient functionality, and a sleek user interface designed to elevate the shopping experience.
   </p>
 
   <h2>🚀 Live Demo</h2>
