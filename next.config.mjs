@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "perfect-shine-production.up.railway.app",
+        hostname: "perfect-shine-payload.up.railway.app",
       },
     ],
     domains: ["localhost"],
