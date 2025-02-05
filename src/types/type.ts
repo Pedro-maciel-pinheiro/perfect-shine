@@ -2,7 +2,9 @@
 import { TQueryValidator } from "@/lib/validators/query-validator";
 import { Product } from "@/payload-types";
 
-
+export type SectionBannerSkeletonProps = {
+  loading: boolean;
+};
 
 
 export type linkPathProps = {

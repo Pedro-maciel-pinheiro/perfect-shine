@@ -4,7 +4,6 @@ import { ImagesCardProps } from "@/types/type";
 
 
 export const ImageCard = ({
-  product,
   url,
   displayAllImages,
 }: ImagesCardProps) => {

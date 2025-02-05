@@ -4,7 +4,6 @@ import { ProductListingProps } from "@/types/type";
 import { ProductPlaceHolder } from "./product-place-holder";
 import Link from "next/link";
 import { cn, formatPrice } from "@/lib/utils";
-import { PRODUCT_CATEGORIES } from "@/constant/product-category";
 import { ImageCard } from "../custom/image-card";
 import { AddToCartButton } from "../button/add-to-cart-button";
 

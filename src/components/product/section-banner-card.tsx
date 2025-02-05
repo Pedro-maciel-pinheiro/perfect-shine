@@ -2,6 +2,7 @@
 import React from "react";
 import { trpc } from "@/trpc/client";
 import Image from "next/image";
+import { SectionBannerSkeleton } from "./section-banner-skeletion";
 
 export const SectionBannerCard = () => {
   const { data: banners, isLoading } = trpc.getBanners.useQuery({
@@ -9,7 +10,7 @@ export const SectionBannerCard = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <SectionBannerSkeleton/>;
   }
 
   if (!banners || banners.length === 0) {

@@ -14,7 +14,7 @@ export default function Products() {
       <Breadcrumb paramsInfo={breadcrumbParams} />
       <SectionBannerCard />
       <ProductReel
-        query={{ sort: "desc", limit: 40 }}
+        query={{ sort: "desc", limit: 16 }}
         title={"PRODUCTS LIST"}
         className={"grid grid-cols-2 p-2 md:grid-cols-3 lg:grid-cols-4"}
       />
