@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     domains:[
       "localhost",
-      "perfect-shine-payload.up.railway.app",
+      "perfect-shine-production.up.railway.app",
     ]
   },
 };

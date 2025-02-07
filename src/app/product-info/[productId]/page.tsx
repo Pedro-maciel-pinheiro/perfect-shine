@@ -14,7 +14,6 @@ import { AddToCartButton } from "@/components/button/add-to-cart-button";
 import { ImageCard } from "@/components/custom/image-card";
 import ProductReel from "@/components/product/product-reel";
 import ImageSlider from "@/components/custom/image-slider";
-import Image from "next/image";
 import { SectionHeader } from "@/components/section-header";
 
 export default async function page({ params }: singleProductProps) {
